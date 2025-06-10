@@ -1,0 +1,159 @@
+.form {
+  padding: 40px 0 40px;
+
+  @media (min-width: $vp-tablet) {
+    padding: 50px 0 50px;
+  }
+
+  @media (min-width: $vp-desktop) {
+    padding: 60px 0 60px;
+  }
+}
+
+.form__wrapper-bg {
+  @include width-100vw;
+  padding: 43px 10px 40px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: $color-base-primary;
+  background-image:
+    image-set("../img/form/form-bg@1x.webp" type("image/webp") 1x,
+      "../img/form/form-bg@2x.webp" type("image/webp") 2x,
+      "../img/form/form-bg@1x.jpg" type("image/jpeg") 1x,
+      "../img/form/form-bg@2x.jpg" type("image/jpeg") 2x);
+
+  @media (min-width: $vp-tablet) {
+    width: auto;
+    margin: 0 13px;
+    padding: 0;
+    border-radius: 16px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: $color-base-primary;
+    background-image:
+      image-set("../img/form/form-bg-tablet@1x.webp" type("image/webp") 1x,
+        "../img/form/form-bg-tablet@2x.webp" type("image/webp") 2x,
+        "../img/form/form-bg-tablet@1x.jpg" type("image/jpeg") 1x,
+        "../img/form/form-bg-tablet@2x.jpg" type("image/jpeg") 2x);
+  }
+
+  @media (min-width: $vp-desktop) {
+    margin: 0;
+    background-image:
+      image-set("../img/form/form-bg-desk@1x.webp" type("image/webp") 1x,
+        "../img/form/form-bg-desk@2x.webp" type("image/webp") 2x,
+        "../img/form/form-bg-desk@1x.jpg" type("image/jpeg") 1x,
+        "../img/form/form-bg-desk@2x.jpg" type("image/jpeg") 2x);
+  }
+}
+
+.form__wrapper {
+  padding: 15px 15px 27px 15px;
+  color: $color-bg-primary;
+  background-color: $color-base-secondary;
+
+  @media (min-width: $vp-tablet) {
+    width: 442px;
+    padding: 41px 40px 36px 40px;
+    border-radius: 16px;
+  }
+
+  @media (min-width: $vp-desktop) {
+    width: 490px;
+    padding: 44px 70px 40px;
+  }
+}
+
+.form__title {
+  margin-bottom: 10px;
+  font-size: 18px;
+  line-height: 22px;
+  color: $color-white;
+
+  @media (min-width: $vp-tablet) {
+    margin-bottom: 32px;
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  @media (min-width: $vp-desktop) {
+    margin-bottom: 34px;
+    font-size: 32px;
+    line-height: 36px;
+  }
+}
+
+.form__descr {
+  margin: 0 0 20px;
+  font-size: 14px;
+  line-height: 20px;
+
+  @media (min-width: $vp-tablet) {
+    margin-bottom: 41px;
+    font-size: 16px;
+  }
+
+  @media (min-width: $vp-desktop) {
+    margin-bottom: 39px;
+    line-height: 26px;
+  }
+}
+
+.form__button {
+  width: 260px;
+  border-color: $color-white;
+  background-color: $color-transparent;
+  color: $color-white;
+
+  @media (min-width: $vp-tablet) {
+    width: 352px;
+    gap: 30px;
+  }
+
+  @media (min-width: $vp-desktop) {
+    width: 350px;
+  }
+
+  span {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 12px;
+    letter-spacing: 0.24px;
+    text-transform: uppercase;
+
+    @media (min-width: $vp-tablet) {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 14px;
+      letter-spacing: 0.28px;
+    }
+  }
+
+  .form__button-icon {
+    background-color: $color-white;
+  }
+
+  .form__button-icon::after {
+    background-color: $color-base-primary;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: $color-white;
+    }
+
+    &:hover span {
+      color: $color-base-secondary;
+    }
+
+    &:hover .link--primary-icon {
+      background-color: $color-base-secondary;
+    }
+
+    &:hover .link--primary-icon::after {
+      background-color: $color-white;
+    }
+  }
+}

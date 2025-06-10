@@ -1,0 +1,35 @@
+.buttons-group {
+  display: flex;
+  column-gap: 8px;
+}
+
+.buttons-group__btn.swiper-button-prev,
+.buttons-group__btn.swiper-button-next {
+  display: flex;
+  margin-top: 0;
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: $color-transparent;
+
+  &::before {
+    @include icons-mask($color-base-secondary, url("/__spritemap#sprite-arrow-slider-view"));
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+  }
+
+  &::after {
+    content: none;
+  }
+}
+
+.buttons-group__btn.swiper-button-prev {
+  &::before {
+    transform: rotate(-180deg)
+  }
+}

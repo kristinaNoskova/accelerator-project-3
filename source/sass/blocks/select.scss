@@ -1,0 +1,90 @@
+.select {
+  .select__input {
+    position: relative;
+    padding: 17px 20px;
+    height: 52px;
+    width: 100%;
+    font-family: $ff-primary;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px;
+    border-radius: 8px;
+    color: $color-bg-primary;
+    background-color: $color-transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  }
+
+  .select__input::before {
+    @include icons-mask($color-white, url("/__spritemap#sprite-arrow-down-view"));
+    content: "";
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    mask-size: 15px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .select__input.ss-main {
+    box-shadow: none;
+    transition: border-color 0.3s ease-in-out;
+
+    &:hover,
+    &:active,
+    &:focus-visible {
+      box-shadow: none;
+      outline: none;
+      border-color: $color-white;
+    }
+  }
+
+  .ss-arrow {
+    display: none;
+  }
+}
+
+.select__input.ss-content {
+  margin-top: 3px;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: $color-white;
+
+  .select__input-option {
+    padding: 17px 20px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      color: $color-base-secondary;
+      background-color: $color-white;
+    }
+
+    &:active,
+    &:focus-visible {
+      color: $color-white;
+      background-color: $color-base-secondary;
+    }
+  }
+
+  .select__input-option.ss-selected:not(.ss-disabled) {
+    color: $color-white;
+    background-color: $color-base-secondary;
+  }
+}
+
+.select__input.ss-open-below:not(.ss-main) {
+  transform: scaleY(1) translateY(4px);
+}
+
+.select__input.ss-open-below {
+  &::before {
+    transform: translateY(-50%) rotate(-180deg);
+  }
+}

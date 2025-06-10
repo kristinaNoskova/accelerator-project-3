@@ -1,0 +1,201 @@
+.link {
+  display: block;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 12px;
+  letter-spacing: 0.24px;
+  text-transform: uppercase;
+  color: $color-base-secondary;
+  text-decoration: none;
+  cursor: pointer;
+
+  &--primary {
+    display: flex;
+    padding: 4px 4px 4px 20px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 17px;
+    border-radius: 30px;
+    border: 1px solid $color-base-secondary;
+
+    @media (min-width: $vp-tablet) {
+      padding: 4px 5px 4px 31px;
+      font-size: 14px;
+      line-height: 14px;
+      letter-spacing: 0.28px;
+    }
+  }
+}
+
+.link--primary-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  background-color: $color-base-secondary;
+  transition: background-color 0.3s ease-in-out;
+
+  @media (min-width: $vp-tablet) {
+    width: 46px;
+    height: 46px;
+  }
+
+  &::after {
+    @include icons-mask ($color-white, url("/__spritemap#sprite-arrow-view"));
+    content: "";
+    width: 8px;
+    height: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease 0.2s;
+  }
+}
+
+.link--primary {
+  transition: color 0.3s ease-in-out 0.2s, background-color 0.3s ease-in-out;
+
+  span:first-child {
+    white-space: normal;
+    overflow-wrap: break-word;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: $color-base-secondary;
+    }
+
+    &:hover span {
+      color: $color-white;
+    }
+
+    &:hover .link--primary-icon {
+      background-color: $color-white;
+    }
+
+    &:hover .link--primary-icon::after {
+      background-color: $color-base-secondary;
+      transform: rotate(45deg);
+    }
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+
+
+  &:focus-visible {
+    opacity: 1;
+
+    .link--primary-icon::after {
+      transform: rotate(45deg);
+    }
+  }
+
+  &:disabled {
+    border-color: $color-disabled;
+    background-color: $color-transparent;
+    pointer-events: none;
+
+    span {
+      color: $color-disabled;
+    }
+
+    .link--primary-icon {
+      background-color: $color-disabled;
+    }
+
+    .link--primary-icon::after {
+      opacity: 0.6;
+    }
+  }
+}
+
+.link--primary-disabled {
+  border-color: $color-disabled;
+  background-color: $color-transparent;
+  pointer-events: none;
+
+  span {
+    color: $color-disabled;
+  }
+
+  .link--primary-icon {
+    background-color: $color-disabled;
+  }
+
+  .link--primary-icon::after {
+    opacity: 0.6;
+  }
+}
+
+.link--secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: $color-base-secondary;
+  transition: background-color 0.3s ease-in-out;
+
+  &::after {
+    @include icons-mask ($color-white, url("/__spritemap#sprite-arrow-view"));
+    content: "";
+    width: 8px;
+    height: 10px;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease 0.2s;
+
+    @media (min-width: $vp-tablet) {
+      width: 8px;
+      height: 8px;
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: $color-white;
+    }
+
+    &:hover::after {
+      background-color: $color-base-secondary;
+      transform: rotate(45deg);
+    }
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+
+  &:focus-visible {
+    opacity: 1;
+    outline: none;
+
+    &::after {
+      transform: rotate(45deg);
+    }
+  }
+
+  &:disabled {
+    background-color: $color-disabled;
+
+    &::after {
+      opacity: 0.6;
+    }
+  }
+}
+
+.link--secondary-disabled {
+  background-color: $color-disabled;
+  pointer-events: none;
+
+  ::after {
+    opacity: 0.6;
+  }
+}

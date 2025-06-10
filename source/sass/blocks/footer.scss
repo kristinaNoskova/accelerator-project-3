@@ -1,0 +1,229 @@
+.footer {
+  padding: 40px 0;
+
+  @media (min-width: $vp-tablet) {
+    padding: 40px 0;
+  }
+
+  @media (min-width: $vp-desktop) {
+    padding: 60px 0 40px;
+  }
+
+  .container {
+    @include flex-column();
+
+    @media (min-width: $vp-tablet) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 25px;
+      align-items: center;
+    }
+
+    @media (min-width: $vp-desktop) {
+      grid-template-columns: 52px 1fr minmax(max-content, 200px);
+      gap: 25px 52px;
+    }
+  }
+}
+
+.footer__logo {
+  margin-bottom: 16px;
+  width: 52px;
+  height: 52px;
+
+  @media (min-width: $vp-tablet) {
+    margin-bottom: 0;
+    margin-right: 16px;
+    grid-row: 1;
+    grid-column: 1 / -1;
+  }
+
+  @media (min-width: $vp-desktop) {
+    grid-row: 1;
+    grid-column: 1;
+  }
+}
+
+.footer__menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px 29px;
+  margin-bottom: 20px;
+
+  @media (min-width: $vp-tablet) {
+    max-width: 616px;
+    margin-bottom: 0;
+    grid-column: 1 / -1;
+    grid-row: 1;
+    justify-self: right;
+    gap: 14.5px;
+    justify-content: end;
+  }
+
+  @media (min-width: $vp-desktop) {
+    grid-row: 1;
+    grid-column: 2;
+    justify-self: start;
+    justify-content: start;
+    gap: 29.5px;
+    max-width: none;
+  }
+}
+
+.footer__menu-link {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  text-transform: none;
+  letter-spacing: 0.11px;
+  color: $color-base-primary;
+
+  @media (min-width: $vp-tablet) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  @media (min-width: $vp-desktop) {
+    line-height: 26px
+  }
+}
+
+.footer__copy {
+  @include flex-column();
+  margin-bottom: 14.5px;
+
+  @media (min-width: $vp-tablet) {
+    align-items: flex-start;
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $vp-desktop) {
+    grid-row: 2;
+    grid-column: 1 / -1;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.footer__copy-link {
+  position: relative;
+  margin-bottom: 13px;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: none;
+  letter-spacing: normal;
+  color: $color-base-primary;
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 1px;
+    bottom: -3px;
+    left: 0;
+    right: 0;
+    transform-origin: center;
+    transform: scaleX(1);
+    background-color: $color-base-primary;
+    transition: transform 0.3s ease;
+  }
+
+  @media (min-width: $vp-tablet) {
+    line-height: 12px;
+    letter-spacing: -0.1px;
+  }
+
+  @media (min-width: $vp-desktop) {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.footer__copy-text {
+  margin: 0;
+  font-size: 12px;
+  line-height: 14px;
+  color: $color-base-primary;
+  letter-spacing: normal;
+  opacity: 0.6;
+
+  @media (min-width: $vp-tablet) {
+    line-height: 12px;
+  }
+
+  @media (min-width: $vp-desktop) {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.footer__socials {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  @media (min-width: $vp-tablet) {
+    justify-self: right;
+    justify-content: flex-end;
+  }
+
+  @media (min-width: $vp-desktop) {
+    grid-row: 1;
+    grid-column: 3;
+    gap: 20px;
+  }
+}
+
+.footer__socials-link {
+  display: block;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: $color-base-secondary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease-in-out;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    mask-size: 12px;
+
+    @media (min-width: $vp-tablet) {
+      width: 16px;
+      height: 16px;
+      mask-size: 16px;
+    }
+  }
+
+  @media (min-width: $vp-tablet) {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.footer__socials-link--vk {
+  &::before {
+    @include icons-mask($color-white, url("/__spritemap#sprite-vk-view"));
+  }
+}
+
+.footer__socials-link--ok {
+  &::before {
+    @include icons-mask($color-white, url("/__spritemap#sprite-ok-view"));
+  }
+}
+
+.footer__socials-link--reddit {
+  &::before {
+    @include icons-mask($color-white, url("/__spritemap#sprite-reddit-view"));
+  }
+}

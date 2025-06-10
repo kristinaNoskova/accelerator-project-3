@@ -1,0 +1,63 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+.page-body {
+  @include flex-column(stretch);
+  @include overlay($color-overlay-modal);
+
+  min-height: 100%;
+  margin: 0;
+  min-width: 320px;
+  font-family: $ff-primary;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  overflow-y: visible;
+  color: $color-base-primary;
+  background: linear-gradient(0deg, $color-bg-primary 0%, $color-bg-primary 100%), $color-white;
+
+
+  @media (min-width: $vp-tablet) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+
+  &::before {
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+}
+
+.page-body--overlay {
+  overflow-y: hidden;
+  touch-action: none;
+
+  &::before {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+
+.main {
+  flex-grow: 1;
+}

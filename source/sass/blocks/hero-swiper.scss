@@ -1,0 +1,143 @@
+.hero-swiper__slide {
+  position: relative;
+  padding-top: 90px;
+  padding-bottom: 20px;
+  min-height: 568px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  @media (min-width: $vp-tablet) {
+    min-height: 1024px;
+    padding-bottom: 60px;
+  }
+
+  @media (min-width: $vp-desktop) {
+    min-height: 800px;
+  }
+
+  @include overlay($color-overlay-photo);
+}
+
+.hero-swiper .hero-swiper__slide {
+  display: flex;
+  align-items: flex-end;
+}
+
+.hero-swiper__slide--1 {
+  background-image:
+    image-set("../../img/hero/hero-slide-1-mob@1x.webp" type("image/webp") 1x,
+      "../../img/hero/hero-slide-1-mob@2x.webp" type("image/webp") 2x,
+      "../../img/hero/hero-slide-1-mob@1x.jpg" type("image/jpeg") 1x,
+      "../../img/hero/hero-slide-1-mob@2x.jpg" type("image/jpeg") 2x);
+
+  @media(min-width: $vp-tablet) {
+    background-image:
+      image-set("../../img/hero/hero-slide-1-tablet@1x.webp" type("image/webp") 1x,
+        "../../img/hero/hero-slide-1-tablet@2x.webp" type("image/webp") 2x,
+        "../../img/hero/hero-slide-1-tablet@1x.jpg" type("image/jpeg") 1x,
+        "../../img/hero/hero-slide-1-tablet@2x.jpg" type("image/jpeg") 2x);
+  }
+
+  @media(min-width: $vp-desktop) {
+    background-image:
+      image-set("../../img/hero/hero-slide-1-desk@1x.webp" type("image/webp") 1x,
+        "../../img/hero/hero-slide-1-desk@2x.webp" type("image/webp") 2x,
+        "../../img/hero/hero-slide-1-desk@1x.jpg" type("image/jpeg") 1x,
+        "../../img/hero/hero-slide-1-desk@2x.jpg" type("image/jpeg") 2x);
+  }
+}
+
+.hero-swiper__slide--2 {
+  background-image:
+    image-set("../../img/hero/hero-slide-2-mob@1x.webp" type("image/webp") 1x,
+      "../../img/hero/hero-slide-2-mob@2x.webp" type("image/webp") 2x,
+      "../../img/hero/hero-slide-2-mob@1x.jpg" type("image/jpeg") 1x,
+      "../../img/hero/hero-slide-2-mob@2x.jpg" type("image/jpeg") 2x);
+
+  @media(min-width: $vp-tablet) {
+    background-image:
+      image-set("../../img/hero/hero-slide-2-tablet@1x.webp" type("image/webp") 1x,
+        "../../img/hero/hero-slide-2-tablet@2x.webp" type("image/webp") 2x,
+        "../../img/hero/hero-slide-2-tablet@1x.jpg" type("image/jpeg") 1x,
+        "../../img/hero/hero-slide-2-tablet@2x.jpg" type("image/jpeg") 2x);
+  }
+
+  @media(min-width: $vp-desktop) {
+    background-image:
+      image-set("../../img/hero/hero-slide-2-desk@1x.webp" type("image/webp") 1x,
+        "../../img/hero/hero-slide-2-desk@2x.webp" type("image/webp") 2x,
+        "../../img/hero/hero-slide-2-desk@1x.jpg" type("image/jpeg") 1x,
+        "../../img/hero/hero-slide-2-desk@2x.jpg" type("image/jpeg") 2x);
+  }
+}
+
+.hero-swiper__slide--3 {
+  background-image:
+    image-set("../../img/hero/hero-slide-3-mob@1x.webp" type("image/webp") 1x,
+      "../../img/hero/hero-slide-3-mob@2x.webp" type("image/webp") 2x,
+      "../../img/hero/hero-slide-3-mob@1x.jpg" type("image/jpeg") 1x,
+      "../../img/hero/hero-slide-3-mob@2x.jpg" type("image/jpeg") 2x);
+
+  @media(min-width: $vp-tablet) {
+    background-image:
+      image-set("../../img/hero/hero-slide-3-tablet@1x.webp" type("image/webp") 1x,
+        "../../img/hero/hero-slide-3-tablet@2x.webp" type("image/webp") 2x,
+        "../../img/hero/hero-slide-3-tablet@1x.jpg" type("image/jpeg") 1x,
+        "../../img/hero/hero-slide-3-tablet@2x.jpg" type("image/jpeg") 2x);
+  }
+
+  @media(min-width: $vp-desktop) {
+    background-image:
+      image-set("../../img/hero/hero-slide-3-desk@1x.webp" type("image/webp") 1x,
+        "../../img/hero/hero-slide-3-desk@2x.webp" type("image/webp") 2x,
+        "../../img/hero/hero-slide-3-desk@1x.jpg" type("image/jpeg") 1x,
+        "../../img/hero/hero-slide-3-desk@2x.jpg" type("image/jpeg") 2x);
+  }
+}
+
+.hero-swiper__content {
+  position: relative;
+  z-index: 20;
+}
+
+.hero-swiper__content-inner {
+  @media(min-width: $vp-tablet) {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 30px;
+  }
+}
+
+.hero-swiper {
+  .hero-swiper__pagination.swiper-pagination {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    text-align: start;
+    line-height: 12px;
+  }
+}
+
+.hero-swiper__pagination-bullet {
+  width: 8px;
+  height: 8px;
+  margin: 0;
+  padding: 0;
+  background-color: $color-white;
+  border-radius: 50%;
+  border: 2px solid $color-base-secondary;
+  cursor: pointer;
+
+
+  @media (min-width: $vp-tablet) {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.hero-swiper__pagination-bullet--active {
+  background-color: $color-state-active;
+  border-color: $color-state-active;
+}

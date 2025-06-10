@@ -1,0 +1,240 @@
+.accordeon {
+  margin: 0 auto;
+  max-width: 768px;
+
+  @media (min-width: $vp-desktop) {
+    max-width: 1028px;
+  }
+}
+
+.accordeon__item {
+  overflow: hidden;
+  border-radius: 14px;
+  color: $color-base-secondary;
+  background-color: $color-transparent;
+  border: 2px solid $color-base-secondary;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  @media (min-width: $vp-tablet) {
+    border-radius: 16px;
+  }
+}
+
+.accordeon__button {
+  padding: 20px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 10px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: start;
+  text-transform: none;
+  letter-spacing: normal;
+  cursor: pointer;
+  color: inherit;
+  background-color: inherit;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  @media (min-width: $vp-tablet) {
+    padding: 30px;
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  @media (min-width: $vp-desktop) {
+    padding: 40px;
+    font-size: 28px;
+    line-height: 34px;
+  }
+}
+
+.accordeon__button-plus {
+  position: relative;
+  flex-shrink: 0;
+  align-self: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid $color-base-secondary;
+  background-color: $color-base-secondary;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+
+  @media (min-width: $vp-tablet) {
+    align-self: flex-start;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+    height: 18px;
+    width: 2px;
+    opacity: 1;
+    background-color: $color-white;
+    transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) scaleY(1);
+  }
+}
+
+.accordeon__descr {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.3s ease, max-height 0.3s ease, transform 0.3s ease;
+
+  @media (min-width: $vp-tablet) {
+    transform: translateY(0);
+  }
+
+  @media (min-width: $vp-desktop) {
+    transform: translateY(8px);
+  }
+
+  p {
+    padding: 0 16px 20px;
+    margin: 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: $color-bg-primary;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    @media (min-width: $vp-tablet) {
+      padding: 0 30px 20px;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    @media (min-width: $vp-desktop) {
+      padding: 0 40px 20px;
+      line-height: 26px;
+    }
+  }
+
+  &--visible {
+    opacity: 1;
+    transform: translateY(-1px);
+    transition: opacity 0.3s ease, max-height 0.3s ease, transform 0.3s ease;
+
+    @media (min-width: $vp-tablet) {
+      transform: translateY(-10px);
+    }
+
+    @media (min-width: $vp-desktop) {
+      transform: translateY(-20px);
+    }
+  }
+}
+
+.accordeon__item--active {
+  color: $color-white;
+  background-color: $color-base-secondary;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+
+  .accordeon__button-plus {
+    border-color: $color-white;
+    background-color: $color-white;
+  }
+
+  .accordeon__button-plus::before {
+    background-color: $color-base-secondary;
+    opacity: 0;
+    transform: translate(-50%, -50%) scaleY(0);
+  }
+
+  .accordeon__button-plus::after {
+    background-color: $color-base-secondary;
+  }
+}
+
+.accordeon__item:has(.accordeon__button:focus-visible),
+.accordeon__item:has(.accordeon__button:hover) {
+  background-color: $color-white;
+
+  .accordeon__button-plus {
+    border-color: $color-base-secondary;
+    background-color: $color-white;
+  }
+
+  .accordeon__button-plus::before,
+  .accordeon__button-plus::after {
+    background-color: $color-base-secondary;
+  }
+}
+
+.accordeon__item:has(.accordeon__button:active) {
+  color: $color-state-active;
+  border-color: $color-state-active;
+
+  .accordeon__button-plus {
+    border-color: $color-state-active;
+    background-color: $color-state-active;
+  }
+
+  .accordeon__button-plus::before,
+  .accordeon__button-plus::after {
+    background-color: $color-white;
+  }
+}
+
+.accordeon__item--active:has(.accordeon__button:focus-visible),
+.accordeon__item--active:has(.accordeon__button:hover) {
+  background-color: $color-base-secondary;
+  border-color: $color-white;
+
+  .accordeon__button-plus {
+    border-color: $color-white;
+    background-color: $color-transparent;
+  }
+
+  .accordeon__button-plus::before,
+  .accordeon__button-plus::after {
+    background-color: $color-white;
+  }
+}
+
+.accordeon__item--active:has(.accordeon__button:active) {
+  background-color: $color-state-active;
+  border-color: $color-state-active;
+
+  .accordeon__button {
+    background-color: $color-state-active;
+    color: $color-white;
+  }
+
+  .accordeon__button-plus {
+    border-color: $color-white;
+    background-color: $color-white;
+  }
+
+  .accordeon__button-plus::before,
+  .accordeon__button-plus::after {
+    background-color: $color-state-active;
+  }
+}

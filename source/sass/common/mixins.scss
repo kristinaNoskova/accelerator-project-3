@@ -1,0 +1,64 @@
+@mixin font-face($font-family, $font-weight, $font-style, $font-src-woff2, $font-src-woff) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-style: $font-style;
+    font-display: swap;
+    src: $font-src-woff2, $font-src-woff;
+  }
+}
+
+@mixin icons-mask($bg-color, $mask-image) {
+  mask-image: $mask-image;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  background-color: $bg-color;
+}
+
+@mixin width-100vw {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+
+@mixin flex-column($al-items: center, $just-cont: flex-start) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $just-cont;
+  align-items: $al-items;
+}
+
+@mixin overlay($bg-color, $z-index: 10) {
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: $bg-color;
+    z-index: $z-index;
+  }
+}
+
+@mixin corner-deco($width,
+  $height,
+  $right: 0,
+  $background-color,
+  $bottom: 0,
+  $left: auto,
+  $top: auto,
+  $mask-size: 100%) {
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    width: $width;
+    height: $height;
+    position: absolute;
+    bottom: $bottom;
+    right: $right;
+    left: $left;
+    top: $top;
+
+    @include icons-mask($background-color, url("/__spritemap#sprite-angle-view"));
+  }
+}

@@ -1,0 +1,56 @@
+.programs {
+  padding: 56px 0 50px;
+  overflow: hidden;
+
+  @media(min-width: $vp-tablet) {
+    padding: 50px 0;
+  }
+
+  @media(min-width: $vp-desktop) {
+    padding: 62px 0 60px;
+  }
+}
+
+.programs__slider {
+  display: grid;
+  grid-template-columns: 100%;
+  row-gap: 30px;
+
+  @media(min-width: $vp-tablet) {
+    grid-template-columns: 1fr 234px;
+    row-gap: 40px;
+    align-items: center;
+  }
+
+  @media(min-width: $vp-desktop) {
+    row-gap: 42px;
+  }
+}
+
+.programs__title {
+  padding-right: 54px;
+  margin-bottom: 4px;
+
+  @media(min-width: $vp-tablet) {
+    padding-right: 0;
+    grid-column: 1;
+    margin-bottom: 0;
+  }
+}
+
+.programs__link {
+  max-width: 205px;
+  grid-row: 3;
+  padding: 4px 4px 4px 30px;
+
+  @media(min-width: $vp-tablet) {
+    max-width: 234px;
+    grid-row: 1;
+    grid-column: 2;
+  }
+}
+
+.programs__slider-inner {
+  grid-row: 2;
+  grid-column: 1 / -1;
+}

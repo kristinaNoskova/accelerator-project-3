@@ -1,0 +1,67 @@
+.slider-grid {
+  overflow: hidden;
+
+  @media(min-width: $vp-tablet) {
+    overflow: visible;
+  }
+
+  .slider-grid__swiper.swiper {
+    overflow: visible;
+
+    @media(min-width: $vp-desktop) {
+      overflow: hidden;
+    }
+  }
+
+  .slider-grid__wrapper {
+    @media(min-width: $vp-tablet) {
+      margin-bottom: 40px;
+    }
+  }
+
+  .slider-grid__scrollbar.swiper-scrollbar {
+    position: static;
+    display: none;
+
+    @media(min-width: $vp-tablet) {
+      display: block;
+      width: 83%;
+      height: 2px;
+      background-color: rgba(49, 109, 194, 0.2);
+    }
+
+    @media(min-width: $vp-desktop) {
+      width: 91.6%;
+    }
+  }
+}
+
+.slider-grid__swiper.swiper {
+
+  .slider-grid__button {
+    position: static;
+  }
+}
+
+.slider-grid__controls {
+  @media (min-width: $vp-tablet) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.slider-grid__buttons {
+  position: absolute;
+  top: -56px;
+  right: 0;
+
+  @media (min-width: $vp-tablet) {
+    position: static;
+  }
+}
+
+.slider-grid__scrollbar .swiper-scrollbar-drag {
+  max-width: 100%;
+  background-color: $color-base-secondary;
+}

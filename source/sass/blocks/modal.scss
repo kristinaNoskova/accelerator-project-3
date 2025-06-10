@@ -1,0 +1,352 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 23px 0;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 999;
+  background-color: $color-overlay-modal;
+
+  form {
+    @media (min-width: $vp-tablet) {
+      width: 100%;
+    }
+  }
+}
+
+.modal--open {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.modal__wrapper {
+  @include flex-column();
+  position: relative;
+  padding: 40px 15px;
+  width: 290px;
+  border-radius: 16px;
+  text-align: center;
+  background-color: $color-white;
+
+  @media (min-width: $vp-tablet) {
+    padding: 60px 80px;
+    width: 510px;
+  }
+}
+
+.modal__wrapper--in {
+  animation: modal-in 0.5s ease-out 1;
+}
+
+.modal__wrapper--out {
+  animation: modal-out 0.5s ease-in 1;
+}
+
+@keyframes modal-in {
+  from {
+    transform: translateY(-150%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes modal-out {
+  from {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(-150%);
+    opacity: 0;
+  }
+}
+
+.modal__button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s ease-in-out;
+
+  @media (min-width: $vp-tablet) {
+    right: 23px;
+    top: 23px;
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    width: 17px;
+    height: 1px;
+    background-color: $color-base-secondary;
+    transition: background-color 0.3s ease;
+
+    @media (min-width: $vp-tablet) {
+      width: 26px;
+    }
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: $color-base-secondary;
+    }
+
+    &:hover::before,
+    &:hover::after {
+      background-color: $color-white;
+    }
+  }
+
+  &:focus-visible {
+    background-color: $color-base-secondary;
+  }
+
+  &:focus-visible::before,
+  &:focus-visible::after,
+  &:active::before,
+  &:active::after {
+    background-color: $color-white;
+  }
+
+  &:active {
+    background-color: $color-state-active;
+  }
+}
+
+.modal__title {
+  margin-bottom: 15px;
+  font-size: 18px;
+  line-height: 14px;
+
+  @media (min-width: $vp-tablet) {
+    margin-bottom: 20px;
+    font-size: 28px;
+    line-height: 20px;
+  }
+}
+
+.modal__descr {
+  margin: 0 0 25px;
+  width: 80%;
+  font-size: 14px;
+  line-height: 20px;
+  color: $color-base-primary;
+
+  @media (min-width: $vp-tablet) {
+    margin: 0 0 30px;
+    width: 100%;
+    font-size: 16px;
+  }
+
+  @media (min-width: $vp-desktop) {
+    line-height: 26px;
+  }
+}
+
+.modal__input-wrap {
+  margin-bottom: 15px;
+
+  @media (min-width: $vp-tablet) {
+    margin-bottom: 20px;
+  }
+
+  label {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 14px;
+    color: rgba(72, 72, 72, 0.8);
+
+    @media (min-width: $vp-tablet) {
+      margin-bottom: 12px;
+      line-height: 20px;
+    }
+  }
+
+  input {
+    padding: 11.5px 20px;
+    color: $color-base-primary;
+    border-color: rgba(72, 72, 72, 0.3);
+    transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+    @media (min-width: $vp-tablet) {
+      padding: 14.5px 20px;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        border-color: rgba(72, 72, 72, 1);
+      }
+    }
+
+    &:active,
+    &:focus-visible {
+      outline: none;
+      border-color: rgba(72, 72, 72, 1);
+    }
+
+    &:disabled {
+      border-color: rgba(255, 255, 255, 0.50);
+      background-color: rgba(169, 175, 183, 0.20);
+      pointer-events: none;
+    }
+  }
+}
+
+.modal__input-wrap {
+  width: auto;
+
+  .modal__select {
+    padding: 11.5px 20px;
+    max-width: 100%;
+    height: 44px;
+    color: $color-base-primary;
+    border-color: rgba(72, 72, 72, 0.3);
+
+    @media (min-width: $vp-tablet) {
+      padding: 14.5px 20px;
+      height: 50px;
+    }
+  }
+
+  .modal__select::before {
+    background-color: $color-base-primary;
+  }
+
+  .modal__select.ss-main {
+    box-shadow: none;
+    transition: border-color 0.3s ease-in-out;
+
+    &:hover,
+    &:active,
+    &:focus-visible {
+      box-shadow: none;
+      outline: none;
+      border-color: rgba(72, 72, 72, 1);
+    }
+  }
+}
+
+.modal__select.ss-content {
+  border-color: $color-base-primary;
+}
+
+.modal__select.ss-open-below {
+  border-color: $color-base-primary;
+}
+
+.modal__agreement {
+  margin-bottom: 25px;
+
+  @media (min-width: $vp-tablet) {
+    margin-bottom: 30px;
+  }
+
+  label {
+    margin: 0;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: start;
+    color: rgba(72, 72, 72, 0.9);
+  }
+
+  br {
+    display: none;
+  }
+
+  input {
+    padding: 0;
+    background-color: $color-base-secondary;
+    border-color: rgba(250, 250, 250, 0.7);
+    transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+    @media (hover: hover) {
+      &:hover {
+        border-color: $color-white;
+      }
+    }
+
+    &:focus-visible {
+      outline: none;
+      border-color: $color-white;
+    }
+
+    &:disabled {
+      border-color: $color-white;
+      background-color: rgba(255, 255, 255, 0.60);
+      pointer-events: none;
+    }
+  }
+
+  input:checked {
+    &::before {
+      background-color: $color-white;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: $color-base-secondary;
+        border-color: $color-white;
+      }
+
+      &:hover::before {
+        background-color: $color-white;
+      }
+    }
+
+    &:focus-visible {
+      background-color: $color-base-secondary;
+      border-color: $color-white;
+    }
+
+    &:focus-visible::before {
+      background-color: $color-white;
+    }
+
+    &:disabled {
+      background-color: $color-disabled;
+      border-color: $color-disabled;
+      pointer-events: none;
+    }
+
+    &:disabled::before {
+      opacity: 0.7;
+    }
+  }
+}
+
+
+.modal__button-submit {
+  width: 100%;
+  padding: 3px 4px 3px 20px;
+
+  @media (min-width: $vp-tablet) {
+    width: 194px;
+    margin: 0 auto;
+  }
+}

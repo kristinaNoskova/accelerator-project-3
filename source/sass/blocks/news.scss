@@ -1,0 +1,21 @@
+.news {
+  padding: 50px 0;
+  overflow: hidden;
+
+  @media (min-width: $vp-desktop) {
+    padding: 60px 0;
+  }
+}
+
+.news__title {
+  margin-bottom: 24px;
+  text-align: center;
+
+  @media (min-width: $vp-tablet) {
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: $vp-desktop) {
+    margin-bottom: 40px;
+  }
+}

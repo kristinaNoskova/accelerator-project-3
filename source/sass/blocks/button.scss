@@ -1,0 +1,14 @@
+.button {
+  font-family: $ff-primary;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 14px;
+  letter-spacing: 0.28px;
+  text-transform: uppercase;
+  color: $color-base-secondary;
+  background-color: $color-white;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+}

@@ -1,0 +1,22 @@
+.styled-list {
+  color: $color-white;
+}
+
+.styled-list__item {
+  position: relative;
+  border-radius: 16px;
+  border: 1px solid $color-bg-primary;
+
+  &::before {
+    content: "";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -23px;
+    left: -21px;
+    width: 42px;
+    height: 42px;
+    background-color: $color-base-secondary;
+  }
+}

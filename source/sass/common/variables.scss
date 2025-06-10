@@ -1,0 +1,29 @@
+// Typography
+// ---------------------------------
+
+$ff-primary: "Manrope", "Arial", sans-serif;
+
+// Colors
+// ---------------------------------
+
+$color-base-primary: #484848;
+$color-base-secondary: #316dc2;
+$color-bg-primary: #f0efe9;
+$color-error: #FF5E66;
+$color-white: #ffffff;
+$color-black: #000000;
+$color-transparent: rgba(0, 0, 0, 0);
+$color-state-active: #275699;
+$color-disabled: #a9afb7;
+$color-overlay-photo: rgba(49, 109, 194, 0.2);
+$color-overlay-modal: rgba(13, 29, 51, 0.4);
+
+
+// Viewports
+// ---------------------------------
+
+$vp-mobile: 576px;
+$vp-tablet: 768px;
+$vp-desktop: 1200px;
+$vp-desktop-extra: 1440px;
+$vp-desktop-wide: 2066px;
