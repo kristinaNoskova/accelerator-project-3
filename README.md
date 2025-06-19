@@ -8,7 +8,7 @@
 
 ## 🌐 Живое демо
 
-[![Перейти на сайт](https://img.shields.io/badge/Смотреть_сайт-8957e5?style=for-the-badge&logo=github&logoColor=white)](https://kristinanoskova.github.io/accelerator-project-2/)
+[![Перейти на сайт](https://img.shields.io/badge/Смотреть_сайт-8957e5?style=for-the-badge&logo=github&logoColor=white)](https://kristinanoskova.github.io/accelerator-project-3/)
 
 Перейдите по ссылке, чтобы увидеть результат работы!
 
