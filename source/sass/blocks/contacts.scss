@@ -5,7 +5,6 @@
 
   @media (min-width: $vp-tablet) {
     padding: 100px 0;
-
   }
 
   @media (min-width: $vp-desktop) {
@@ -23,7 +22,7 @@
     margin-bottom: 40px;
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       display: block;
       bottom: 0;
@@ -51,13 +50,14 @@
 
 .contacts__list {
   @include flex-column(flex-start);
+
   gap: 20px;
   position: relative;
   padding-bottom: 32px;
   margin-bottom: 30px;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     display: block;
     bottom: 0;
@@ -136,6 +136,42 @@
 .contacts__item:first-child .contacts__item-value {
   @media (min-width: $vp-desktop) {
     line-height: 26px;
+  }
+}
+
+.contacts__item-value.link {
+  position: relative;
+  transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out;
+
+  &::before {
+    @include link-decoration-line;
+
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &:focus-visible {
+    outline: none;
+    color: $color-base-primary;
+
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+
+  &:active {
+    opacity: 1;
+    color: $color-white;
+
+    &::before {
+      transform: scaleX(1);
+      background-color: $color-white;
+    }
   }
 }
 

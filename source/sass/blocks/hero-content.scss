@@ -1,34 +1,33 @@
 .hero-content {
   max-width: 100%;
-  border-radius: 14px;
   position: relative;
   z-index: 10;
   border-radius: 14px;
 
-  @media(min-width: $vp-tablet) {
+  @media (min-width: $vp-tablet) {
     display: grid;
     align-items: start;
     grid-template-columns: 1fr 1fr;
     width: 659px;
   }
 
-  @media(min-width: $vp-desktop) {
+  @media (min-width: $vp-desktop) {
     width: auto;
     max-width: 968px;
   }
 
   p {
     margin: 0;
-    padding: 0 14px 15px 14px;
+    padding: 0 14px 15px;
     font-size: 16px;
     line-height: 20px;
 
-    @media(min-width: $vp-tablet) {
+    @media (min-width: $vp-tablet) {
       margin: 0;
       padding: 0 15px 35px 40px;
     }
 
-    @media(min-width: $vp-desktop) {
+    @media (min-width: $vp-desktop) {
       padding: 0 0 35px 50px;
       line-height: 26px;
     }
@@ -37,17 +36,22 @@
 
 .hero-content__pagination {
   @include corner-deco(10px, 10px, -10px, $color-white );
+
   width: max-content;
   max-width: 200px;
+  min-width: 80px;
+  min-height: 28px;
   padding: 10px 16px;
-  border-radius: 12px 12px 0px 0px;
+  border-radius: 12px 12px 0 0;
   background-color: $color-white;
 
-  @media(min-width: $vp-tablet) {
+  @media (min-width: $vp-tablet) {
     grid-column: 1;
     grid-row: 1;
+    min-width: 100px;
+    min-height: 40px;
     padding: 14px 20px;
-    border-radius: 20px 20px 0px 0px;
+    border-radius: 20px 20px 0 0;
     background-color: #ffffff;
 
     &::before {
@@ -64,13 +68,13 @@
 
 .hero-content__step--1 {
   border-radius: 0 16px 16px 0;
-  padding: 19px 14px 17px 14px;
+  padding: 19px 14px 17px;
   background-color: $color-white;
 
   @media (min-width: $vp-tablet) {
     grid-column: 1 / -1;
     grid-row: 2;
-    padding: 30px 40px 24px 40px;
+    padding: 30px 40px 24px;
     border-radius: 0 30px 30px 0;
   }
 
@@ -81,8 +85,9 @@
 
 .hero-content__step--2 {
   @include corner-deco(10px, 10px, -10px, $color-white, auto, auto, 0);
+
   width: 92%;
-  border-radius: 0 0 14px 0;
+  border-radius: 0 0 14px;
   background-color: $color-white;
 
   &::before {
@@ -104,6 +109,7 @@
 
 .hero-content__step--3 {
   @include corner-deco(10px, 10px, -10px, $color-white, auto, auto, 0);
+
   padding: 10px 15px;
   width: 63.4%;
   border-radius: 0 0 14px 14px;
@@ -113,14 +119,13 @@
     transform: rotate(90deg);
   }
 
-  @media(min-width: $vp-tablet) {
+  @media (min-width: $vp-tablet) {
     grid-column: 2;
     grid-row: 3;
-    padding: 0;
     width: 79.9%;
     height: 100%;
     padding: 0 15px 10px 25px;
-    border-radius: 0 0 30px 0;
+    border-radius: 0 0 30px;
 
     &::before {
       width: 26px;
@@ -129,7 +134,7 @@
     }
   }
 
-  @media(min-width: $vp-desktop) {
+  @media (min-width: $vp-desktop) {
     padding: 11px 40px 35px 41px;
     width: 60%;
   }
@@ -153,7 +158,7 @@
 .hero-content__link {
   max-width: 154px;
 
-  @media(min-width: $vp-tablet) {
+  @media (min-width: $vp-tablet) {
     margin: 0;
     max-width: 200px;
   }

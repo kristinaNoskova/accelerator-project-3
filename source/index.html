@@ -26,32 +26,33 @@
           <img src="img/logo.svg" alt="Internship" width="52" height="52">
         </div>
         <nav class="main-nav">
+          <div class="main-nav__overlay"></div>
           <button class="main-nav__button button" type="button">
             <span class="main-nav__button-value">
               меню
             </span>
             <span class="main-nav__button-burger">
-              <span class="main-nav__button-burger--line"></span>
+              <span class="main-nav__button-line"></span>
             </span>
           </button>
-          <ul class="main-nav__menu list-reset">
+          <ul class="main-nav__menu list-reset" inert aria-hidden="true">
             <li class="main-nav__menu-item">
               <a class="main-nav__menu-link nav-link link" href="#about">О проекте</a>
             </li>
             <li class="main-nav__menu-item has-submenu">
-              <a class="main-nav__menu-link nav-link link" href="#">Программы</a>
+              <a class="main-nav__menu-link nav-link link" href="#programs">Программы</a>
               <ul class="list-reset main-nav__submenu">
                 <li class="main-nav__submenu-item">
-                  <a class="main-nav__submenu-link nav-link link" href="#">Стажировки</a>
+                  <a class="main-nav__submenu-link nav-link link" href="#programs">Стажировки</a>
                 </li>
                 <li class="main-nav__submenu-item">
-                  <a class="main-nav__submenu-link nav-link link" href="#">Волонтёрство</a>
+                  <a class="main-nav__submenu-link nav-link link" href="#programs">Волонтёрство</a>
                 </li>
                 <li class="main-nav__submenu-item">
-                  <a class="main-nav__submenu-link nav-link link" href="#">Учеба</a>
+                  <a class="main-nav__submenu-link nav-link link" href="#programs">Учеба</a>
                 </li>
                 <li class="main-nav__submenu-item">
-                  <a class="main-nav__submenu-link nav-link link" href="#">Религия</a>
+                  <a class="main-nav__submenu-link nav-link link" href="#programs">Религия</a>
                 </li>
               </ul>
             </li>
@@ -65,19 +66,19 @@
               <a class="main-nav__menu-link nav-link link" href="#news">новости</a>
               <ul class="list-reset main-nav__submenu">
                 <li class="main-nav__submenu-item">
-                  <a class="main-nav__submenu-link nav-link link" href="#">общее</a>
+                  <a class="main-nav__submenu-link nav-link link" href="#news">общее</a>
                 </li>
                 <li class="main-nav__submenu-item">
-                  <a class="main-nav__submenu-link nav-link link" href="#">Волонтёрство</a>
+                  <a class="main-nav__submenu-link nav-link link" href="#news">Волонтёрство</a>
                 </li>
                 <li class="main-nav__submenu-item">
-                  <a class="main-nav__submenu-link nav-link link" href="#">Стажировки</a>
+                  <a class="main-nav__submenu-link nav-link link" href="#news">Стажировки</a>
                 </li>
                 <li class="main-nav__submenu-item">
-                  <a class="main-nav__submenu-link  nav-link link" href="#">Карьера</a>
+                  <a class="main-nav__submenu-link  nav-link link" href="#news">Карьера</a>
                 </li>
                 <li class="main-nav__submenu-item">
-                  <a class="main-nav__submenu-link nav-link link" href="#">путешествия</a>
+                  <a class="main-nav__submenu-link nav-link link" href="#news">путешествия</a>
                 </li>
               </ul>
             </li>
@@ -109,7 +110,7 @@
                 <div class="hero-content__step hero-content__step--3">
                   <a class="hero-content__link link link--primary" href="#">
                     <span>подробнее</span>
-                    <span class="link--primary-icon"></span>
+                    <span class="link__icon"></span>
                   </a>
                 </div>
               </div>
@@ -133,7 +134,7 @@
                 <div class="hero-content__step hero-content__step--3">
                   <a class="hero-content__link link link--primary" href="#">
                     <span>подробнее</span>
-                    <span class="link--primary-icon"></span>
+                    <span class="link__icon"></span>
                   </a>
                 </div>
               </div>
@@ -156,7 +157,7 @@
                 <div class="hero-content__step hero-content__step--3">
                   <a class="hero-content__link link link--primary" href="#">
                     <span>подробнее</span>
-                    <span class="link--primary-icon"></span>
+                    <span class="link__icon"></span>
                   </a>
                 </div>
               </div>
@@ -186,13 +187,13 @@
             <span>
               подробнее о проекте
             </span>
-            <span class="link--primary-icon"></span>
+            <span class="link__icon"></span>
           </a>
         </div>
         <ul class="about__list about-list styled-list list-reset">
           <li class="about-list__item styled-list__item">
             <p>Более 250 программ</p>
-            <span>учебных и рабочих, разной длительностью от 3 месяцев до 1 года</span>
+            <span>учебных и рабочих, разной длительностью от&nbsp;3&nbsp;месяцев до 1 года</span>
           </li>
           <li class="about-list__item styled-list__item">
             <p>Более 3000 участников</p>
@@ -200,12 +201,12 @@
           </li>
           <li class="about-list__item styled-list__item">
             <p>участники из&nbsp;60&nbsp;стран</p>
-            <span>студенты со всего мира приезжают&nbsp;на&nbsp;программу «Стажировки» от&nbsp;3&nbsp;месяцев до 1
+            <span>студенты со всего мира приезжают&nbsp;на&nbsp;программу «Стажировки» от&nbsp;3&nbsp;месяцев до&nbsp;1
               года</span>
           </li>
           <li class="about-list__item styled-list__item">
             <p>от 4 200 $<br> до 8 400 $</p>
-            <span>грант&nbsp;всем участникам для&nbsp;комфортного прохождения&nbsp;программы</span>
+            <span>грант&nbsp;всем участникам для&nbsp;комфортного прохождения программы</span>
           </li>
         </ul>
       </div>
@@ -218,7 +219,7 @@
             <span>
               все программы
             </span>
-            <span class="link--primary-icon"></span>
+            <span class="link__icon"></span>
           </a>
           <div class="programs__slider-inner">
             <div class="programs-slider__swiper programs-swiper slider-grid__swiper swiper">
@@ -323,12 +324,12 @@
                 <div class="programs__slider-scrollbar slider-grid__scrollbar swiper-scrollbar"></div>
                 <div class="programs__slider-nav buttons-group slider-grid__buttons">
                   <button
-                    class="programs-slider__button--prev slider-grid__button swiper-button-prev buttons-group__btn button"
+                    class="programs-slider__button programs-slider__button--prev slider-grid__button swiper-button-prev buttons-group__btn button"
                     type="button">
                     <span class="visually-hidden">Предыдущий слайд</span>
                   </button>
                   <button
-                    class="programs-slider__button--next slider-grid__button swiper-button-next buttons-group__btn button"
+                    class="programs-slider__button programs-slider__button--next slider-grid__button swiper-button-next buttons-group__btn button"
                     type="button">
                     <span class="visually-hidden">Следующий слайд</span>
                   </button>
@@ -358,12 +359,12 @@
                 media="(min-width: 768px)" width="678" height="375">
               <source srcset="img/grant/grant-mob@1x.webp 1x, img/grant/grant-mob@2x.webp 2x" type="image/webp"
                 width="290" height="200">
-              <img src="img/grant/grant-mob@1x.png" srcset="img/grant/grant-mob@1x@2x.png 2x" alt="" width="290"
-                height="200" loading="lazy">
+              <img src="img/grant/grant-mob@1x.png" srcset="img/grant/grant-mob@1x@2x.png 2x"
+                alt="Указатели с названиями стран" width="290" height="200" loading="lazy">
             </picture>
           </div>
         </div>
-        <div class="grant__process grant-prgrant__process">
+        <div class="grant__process">
           <h3 class="grant__subtitle title">Чтобы получить грант
             на обучение, вам нужно:</h3>
           <ol class="grant__process-list styled-list list-reset">
@@ -374,12 +375,10 @@
               <p>Иметь оконченное среднее образование</p>
             </li>
             <li class="grant__process-item styled-list__item">
-              <p>Иметь документально подтверждённое отсутствие
-                судимости и пройти консульскую проверку</p>
+              <p>Иметь документально подтверждённое отсутствие судимости и пройти консульскую проверку</p>
             </li>
             <li class="grant__process-item styled-list__item">
-              <p>За последние 2 года быть не больше 3х месяцев
-                подряд непрерывно в одной стране</p>
+              <p>За последние 2 года быть не больше 3х месяцев подряд непрерывно в одной стране</p>
             </li>
           </ol>
         </div>
@@ -409,16 +408,16 @@
           </ul>
 
           <div class="news-content__tabs-wrap">
-            <div id="general" class="news-content__tabs-panel news-content__tabs-panel--active">
+            <div class="news-content__tabs-panel news-content__tabs-panel--active" id="general">
               <div class="news-swiper general-swiper swiper">
                 <div class="news-swiper__wrapper swiper-wrapper">
-                  <article class="news-swiper__slide news-swiper__slide--large news-item swiper-slide">
+                  <div class="news-swiper__slide news-swiper__slide--large news-item swiper-slide">
                     <div class="news-item__img">
                       <picture>
                         <source srcset="img/news/news-1-tablet@1x.webp 1x, img/news/news-1-tablet@2x.webp 2x"
                           type="image/webp" width="290" height="330">
-                        <img src="img/news/news-1-tablet@1x.png" srcset="img/news/news-1-tablet@2x.png 2x" alt=""
-                          width="290" height="330" loading="lazy">
+                        <img src="img/news/news-1-tablet@1x.png" srcset="img/news/news-1-tablet@2x.png 2x"
+                          alt="Интервью с участницей программы стажировки" width="290" height="330" loading="lazy">
                       </picture>
                     </div>
                     <div class="news-item__text">
@@ -431,7 +430,7 @@
                         </h2>
                       </div>
                       <div class="news-item__text-step news-item__text-step--3">
-                        <div class="news-item__text-descr">
+                        <div class="news-item__text-descr news-swiper__slide-descr ">
                           <p>
                             Саша рассказывает, как&nbsp;попала
                             в&nbsp;программу и&nbsp;как прошла 6-месячная стажировка в&nbsp;ISOFound
@@ -442,8 +441,8 @@
                         </a>
                       </div>
                     </div>
-                  </article>
-                  <article class="news-swiper__slide news-item swiper-slide">
+                  </div>
+                  <div class="news-swiper__slide news-item swiper-slide">
                     <div class="news-item__img">
                       <picture>
                         <source srcset="img/news/news-2-desk@1x.webp 1x, img/news/news-2-desk@2x.webp 2x"
@@ -452,8 +451,9 @@
                           media="(min-width: 1200px)" width="324" height="350">
                         <source srcset="img/news/news-2-tablet@1x.webp 1x, img/news/news-2-tablet@2x.webp 2x"
                           type="image/webp" width="290" height="330">
-                        <img src="img/news/news-2-tablet@1x.png" srcset="img/news/news-2-tablet@2x.png 2x" alt=""
-                          width="290" height="330" loading="lazy">
+                        <img src="img/news/news-2-tablet@1x.png" srcset="img/news/news-2-tablet@2x.png 2x"
+                          alt="Городской пейзаж. Путешествия по миру с образовательными программами." width="290"
+                          height="330" loading="lazy">
                       </picture>
                     </div>
                     <div class="news-item__text">
@@ -466,7 +466,7 @@
                         </h2>
                       </div>
                       <div class="news-item__text-step news-item__text-step--3">
-                        <div class="news-item__text-descr">
+                        <div class="news-item__text-descr news-swiper__slide-descr">
                           <p>
                             Какие места посещают наши студенты весной
                           </p>
@@ -476,8 +476,8 @@
                         </a>
                       </div>
                     </div>
-                  </article>
-                  <article class="news-swiper__slide news-item swiper-slide">
+                  </div>
+                  <div class="news-swiper__slide news-item swiper-slide">
                     <div class="news-item__img">
                       <picture>
                         <source srcset="img/news/news-4-desk@1x.webp 1x, img/news/news-4-desk@2x.webp 2x"
@@ -486,8 +486,8 @@
                           media="(min-width: 768px)" width="324" height="350">
                         <source srcset="img/news/news-4-tablet@1x.webp 1x, img/news/news-4-tablet@2x.webp 2x"
                           type="image/webp" width="290" height="330">
-                        <img src="img/news/news-4-tablet@1x.png" srcset="img/news/news-4-tablet@2x.png 2x" alt=""
-                          width="290" height="330" loading="lazy">
+                        <img src="img/news/news-4-tablet@1x.png" srcset="img/news/news-4-tablet@2x.png 2x"
+                          alt="Участница волонтёрской программы за границей" width="290" height="330" loading="lazy">
                       </picture>
                     </div>
                     <div class="news-item__text">
@@ -500,7 +500,7 @@
                         </h2>
                       </div>
                       <div class="news-item__text-step news-item__text-step--3">
-                        <div class="news-item__text-descr">
+                        <div class="news-item__text-descr news-swiper__slide-descr">
                           <p>
                             Программа помощи детям длительностью 4 месяца
                           </p>
@@ -510,8 +510,8 @@
                         </a>
                       </div>
                     </div>
-                  </article>
-                  <article class="news-swiper__slide news-item swiper-slide">
+                  </div>
+                  <div class="news-swiper__slide news-item swiper-slide">
                     <div class="news-item__img">
                       <picture>
                         <source srcset="img/news/news-3-desk@1x.webp 1x, img/news/news-3-desk@2x.webp 2x"
@@ -520,8 +520,9 @@
                           media="(min-width: 1200px)" width="324" height="350">
                         <source srcset="img/news/news-3-tablet@1x.webp 1x, img/news/news-3-tablet@2x.webp 2x"
                           type="image/webp" width="290" height="330">
-                        <img src="img/news/news-3-tablet@1x.png" srcset="img/news/news-3-tablet@2x.png 2x" alt=""
-                          width="290" height="330" loading="lazy">
+                        <img src="img/news/news-3-tablet@1x.png" srcset="img/news/news-3-tablet@2x.png 2x"
+                          alt="Выпускники стажировки начинают карьеру в международных компаниях" width="290"
+                          height="330" loading="lazy">
                       </picture>
                     </div>
                     <div class="news-item__text">
@@ -534,7 +535,7 @@
                         </h2>
                       </div>
                       <div class="news-item__text-step news-item__text-step--3">
-                        <div class="news-item__text-descr">
+                        <div class="news-item__text-descr news-swiper__slide-descr">
                           <p>
                             Ведущие компании готовы трудоустроить выпускников стажировки
                           </p>
@@ -544,8 +545,8 @@
                         </a>
                       </div>
                     </div>
-                  </article>
-                  <article class="news-swiper__slide news-item swiper-slide">
+                  </div>
+                  <div class="news-swiper__slide news-item swiper-slide">
                     <div class="news-item__img">
                       <picture>
                         <source srcset="img/news/news-3-desk@1x.webp 1x, img/news/news-3-desk@2x.webp 2x"
@@ -554,8 +555,9 @@
                           media="(min-width: 1200px)" width="324" height="350">
                         <source srcset="img/news/news-3-tablet@1x.webp 1x, img/news/news-3-tablet@2x.webp 2x"
                           type="image/webp" width="290" height="330">
-                        <img src="img/news/news-3-tablet@1x.png" srcset="img/news/news-3-tablet@2x.png 2x" alt=""
-                          width="290" height="330" loading="lazy">
+                        <img src="img/news/news-3-tablet@1x.png" srcset="img/news/news-3-tablet@2x.png 2x"
+                          alt="Выпускники стажировки начинают карьеру в международных компаниях" width="290"
+                          height="330" loading="lazy">
                       </picture>
                     </div>
                     <div class="news-item__text">
@@ -568,7 +570,7 @@
                         </h2>
                       </div>
                       <div class="news-item__text-step news-item__text-step--3">
-                        <div class="news-item__text-descr">
+                        <div class="news-item__text-descr news-swiper__slide-descr">
                           <p>
                             Ведущие компании готовы трудоустроить выпускников стажировки
                           </p>
@@ -578,8 +580,8 @@
                         </a>
                       </div>
                     </div>
-                  </article>
-                  <article class="news-swiper__slide news-item swiper-slide">
+                  </div>
+                  <div class="news-swiper__slide news-item swiper-slide">
                     <div class="news-item__img">
                       <picture>
                         <source srcset="img/news/news-3-desk@1x.webp 1x, img/news/news-3-desk@2x.webp 2x"
@@ -588,8 +590,9 @@
                           media="(min-width: 1200px)" width="324" height="350">
                         <source srcset="img/news/news-3-tablet@1x.webp 1x, img/news/news-3-tablet@2x.webp 2x"
                           type="image/webp" width="290" height="330">
-                        <img src="img/news/news-3-tablet@1x.png" srcset="img/news/news-3-tablet@2x.png 2x" alt=""
-                          width="290" height="330" loading="lazy">
+                        <img src="img/news/news-3-tablet@1x.png" srcset="img/news/news-3-tablet@2x.png 2x"
+                          alt="Выпускники стажировки начинают карьеру в международных компаниях" width="290"
+                          height="330" loading="lazy">
                       </picture>
                     </div>
                     <div class="news-item__text">
@@ -602,7 +605,7 @@
                         </h2>
                       </div>
                       <div class="news-item__text-step news-item__text-step--3">
-                        <div class="news-item__text-descr">
+                        <div class="news-item__text-descr news-swiper__slide-descr">
                           <p>
                             Ведущие компании готовы трудоустроить выпускников стажировки
                           </p>
@@ -612,8 +615,8 @@
                         </a>
                       </div>
                     </div>
-                  </article>
-                  <article class="news-swiper__slide news-item swiper-slide">
+                  </div>
+                  <div class="news-swiper__slide news-item swiper-slide">
                     <div class="news-item__img">
                       <picture>
                         <source srcset="img/news/news-3-desk@1x.webp 1x, img/news/news-3-desk@2x.webp 2x"
@@ -622,8 +625,9 @@
                           media="(min-width: 1200px)" width="324" height="350">
                         <source srcset="img/news/news-3-tablet@1x.webp 1x, img/news/news-3-tablet@2x.webp 2x"
                           type="image/webp" width="290" height="330">
-                        <img src="img/news/news-3-tablet@1x.png" srcset="img/news/news-3-tablet@2x.png 2x" alt=""
-                          width="290" height="330" loading="lazy">
+                        <img src="img/news/news-3-tablet@1x.png" srcset="img/news/news-3-tablet@2x.png 2x"
+                          alt="Выпускники стажировки начинают карьеру в международных компаниях" width="290"
+                          height="330" loading="lazy">
                       </picture>
                     </div>
                     <div class="news-item__text">
@@ -636,7 +640,7 @@
                         </h2>
                       </div>
                       <div class="news-item__text-step news-item__text-step--3">
-                        <div class="news-item__text-descr">
+                        <div class="news-item__text-descr news-swiper__slide-descr">
                           <p>
                             Ведущие компании готовы трудоустроить выпускников стажировки
                           </p>
@@ -646,8 +650,8 @@
                         </a>
                       </div>
                     </div>
-                  </article>
-                  <article class="news-swiper__slide news-item swiper-slide">
+                  </div>
+                  <div class="news-swiper__slide news-item swiper-slide">
                     <div class="news-item__img">
                       <picture>
                         <source srcset="img/news/news-3-desk@1x.webp 1x, img/news/news-3-desk@2x.webp 2x"
@@ -656,8 +660,9 @@
                           media="(min-width: 1200px)" width="324" height="350">
                         <source srcset="img/news/news-3-tablet@1x.webp 1x, img/news/news-3-tablet@2x.webp 2x"
                           type="image/webp" width="290" height="330">
-                        <img src="img/news/news-3-tablet@1x.png" srcset="img/news/news-3-tablet@2x.png 2x" alt=""
-                          width="290" height="330" loading="lazy">
+                        <img src="img/news/news-3-tablet@1x.png" srcset="img/news/news-3-tablet@2x.png 2x"
+                          alt="Выпускники стажировки начинают карьеру в международных компаниях" width="290"
+                          height="330" loading="lazy">
                       </picture>
                     </div>
                     <div class="news-item__text">
@@ -670,7 +675,7 @@
                         </h2>
                       </div>
                       <div class="news-item__text-step news-item__text-step--3">
-                        <div class="news-item__text-descr">
+                        <div class="news-item__text-descr news-swiper__slide-descr">
                           <p>
                             Ведущие компании готовы трудоустроить выпускников стажировки
                           </p>
@@ -680,8 +685,8 @@
                         </a>
                       </div>
                     </div>
-                  </article>
-                  <article class="news-swiper__slide news-item swiper-slide">
+                  </div>
+                  <div class="news-swiper__slide news-item swiper-slide">
                     <div class="news-item__img">
                       <picture>
                         <source srcset="img/news/news-3-desk@1x.webp 1x, img/news/news-3-desk@2x.webp 2x"
@@ -690,8 +695,9 @@
                           media="(min-width: 1200px)" width="324" height="350">
                         <source srcset="img/news/news-3-tablet@1x.webp 1x, img/news/news-3-tablet@2x.webp 2x"
                           type="image/webp" width="290" height="330">
-                        <img src="img/news/news-3-tablet@1x.png" srcset="img/news/news-3-tablet@2x.png 2x" alt=""
-                          width="290" height="330" loading="lazy">
+                        <img src="img/news/news-3-tablet@1x.png" srcset="img/news/news-3-tablet@2x.png 2x"
+                          alt="Выпускники стажировки начинают карьеру в международных компаниях" width="290"
+                          height="330" loading="lazy">
                       </picture>
                     </div>
                     <div class="news-item__text">
@@ -704,7 +710,7 @@
                         </h2>
                       </div>
                       <div class="news-item__text-step news-item__text-step--3">
-                        <div class="news-item__text-descr">
+                        <div class="news-item__text-descr news-swiper__slide-descr">
                           <p>
                             Ведущие компании готовы трудоустроить выпускников стажировки
                           </p>
@@ -714,8 +720,8 @@
                         </a>
                       </div>
                     </div>
-                  </article>
-                  <article class="news-swiper__slide news-item swiper-slide">
+                  </div>
+                  <div class="news-swiper__slide news-item swiper-slide">
                     <div class="news-item__img">
                       <picture>
                         <source srcset="img/news/news-3-desk@1x.webp 1x, img/news/news-3-desk@2x.webp 2x"
@@ -724,8 +730,9 @@
                           media="(min-width: 1200px)" width="324" height="350">
                         <source srcset="img/news/news-3-tablet@1x.webp 1x, img/news/news-3-tablet@2x.webp 2x"
                           type="image/webp" width="290" height="330">
-                        <img src="img/news/news-3-tablet@1x.png" srcset="img/news/news-3-tablet@2x.png 2x" alt=""
-                          width="290" height="330" loading="lazy">
+                        <img src="img/news/news-3-tablet@1x.png" srcset="img/news/news-3-tablet@2x.png 2x"
+                          alt="Выпускники стажировки начинают карьеру в международных компаниях" width="290"
+                          height="330" loading="lazy">
                       </picture>
                     </div>
                     <div class="news-item__text">
@@ -738,7 +745,7 @@
                         </h2>
                       </div>
                       <div class="news-item__text-step news-item__text-step--3">
-                        <div class="news-item__text-descr">
+                        <div class="news-item__text-descr news-swiper__slide-descr">
                           <p>
                             Ведущие компании готовы трудоустроить выпускников стажировки
                           </p>
@@ -748,8 +755,8 @@
                         </a>
                       </div>
                     </div>
-                  </article>
-                  <article class="news-swiper__slide news-item swiper-slide">
+                  </div>
+                  <div class="news-swiper__slide news-item swiper-slide">
                     <div class="news-item__img">
                       <picture>
                         <source srcset="img/news/news-3-desk@1x.webp 1x, img/news/news-3-desk@2x.webp 2x"
@@ -758,8 +765,9 @@
                           media="(min-width: 1200px)" width="324" height="350">
                         <source srcset="img/news/news-3-tablet@1x.webp 1x, img/news/news-3-tablet@2x.webp 2x"
                           type="image/webp" width="290" height="330">
-                        <img src="img/news/news-3-tablet@1x.png" srcset="img/news/news-3-tablet@2x.png 2x" alt=""
-                          width="290" height="330" loading="lazy">
+                        <img src="img/news/news-3-tablet@1x.png" srcset="img/news/news-3-tablet@2x.png 2x"
+                          alt="Выпускники стажировки начинают карьеру в международных компаниях" width="290"
+                          height="330" loading="lazy">
                       </picture>
                     </div>
                     <div class="news-item__text">
@@ -772,7 +780,7 @@
                         </h2>
                       </div>
                       <div class="news-item__text-step news-item__text-step--3">
-                        <div class="news-item__text-descr">
+                        <div class="news-item__text-descr news-swiper__slide-descr">
                           <p>
                             Ведущие компании готовы трудоустроить выпускников стажировки
                           </p>
@@ -782,8 +790,8 @@
                         </a>
                       </div>
                     </div>
-                  </article>
-                  <article class="news-swiper__slide news-item swiper-slide">
+                  </div>
+                  <div class="news-swiper__slide news-item swiper-slide">
                     <div class="news-item__img">
                       <picture>
                         <source srcset="img/news/news-3-desk@1x.webp 1x, img/news/news-3-desk@2x.webp 2x"
@@ -792,8 +800,9 @@
                           media="(min-width: 1200px)" width="324" height="350">
                         <source srcset="img/news/news-3-tablet@1x.webp 1x, img/news/news-3-tablet@2x.webp 2x"
                           type="image/webp" width="290" height="330">
-                        <img src="img/news/news-3-tablet@1x.png" srcset="img/news/news-3-tablet@2x.png 2x" alt=""
-                          width="290" height="330" loading="lazy">
+                        <img src="img/news/news-3-tablet@1x.png" srcset="img/news/news-3-tablet@2x.png 2x"
+                          alt="Выпускники стажировки начинают карьеру в международных компаниях" width="290"
+                          height="330" loading="lazy">
                       </picture>
                     </div>
                     <div class="news-item__text">
@@ -806,7 +815,7 @@
                         </h2>
                       </div>
                       <div class="news-item__text-step news-item__text-step--3">
-                        <div class="news-item__text-descr">
+                        <div class="news-item__text-descr news-swiper__slide-descr">
                           <p>
                             Ведущие компании готовы трудоустроить выпускников стажировки
                           </p>
@@ -816,8 +825,8 @@
                         </a>
                       </div>
                     </div>
-                  </article>
-                  <article class="news-swiper__slide news-item swiper-slide">
+                  </div>
+                  <div class="news-swiper__slide news-item swiper-slide">
                     <div class="news-item__img">
                       <picture>
                         <source srcset="img/news/news-3-desk@1x.webp 1x, img/news/news-3-desk@2x.webp 2x"
@@ -826,8 +835,9 @@
                           media="(min-width: 1200px)" width="324" height="350">
                         <source srcset="img/news/news-3-tablet@1x.webp 1x, img/news/news-3-tablet@2x.webp 2x"
                           type="image/webp" width="290" height="330">
-                        <img src="img/news/news-3-tablet@1x.png" srcset="img/news/news-3-tablet@2x.png 2x" alt=""
-                          width="290" height="330" loading="lazy">
+                        <img src="img/news/news-3-tablet@1x.png" srcset="img/news/news-3-tablet@2x.png 2x"
+                          alt="Выпускники стажировки начинают карьеру в международных компаниях" width="290"
+                          height="330" loading="lazy">
                       </picture>
                     </div>
                     <div class="news-item__text">
@@ -840,7 +850,7 @@
                         </h2>
                       </div>
                       <div class="news-item__text-step news-item__text-step--3">
-                        <div class="news-item__text-descr">
+                        <div class="news-item__text-descr news-swiper__slide-descr">
                           <p>
                             Ведущие компании готовы трудоустроить выпускников стажировки
                           </p>
@@ -850,8 +860,8 @@
                         </a>
                       </div>
                     </div>
-                  </article>
-                  <article class="news-swiper__slide news-item swiper-slide">
+                  </div>
+                  <div class="news-swiper__slide news-item swiper-slide">
                     <div class="news-item__img">
                       <picture>
                         <source srcset="img/news/news-3-desk@1x.webp 1x, img/news/news-3-desk@2x.webp 2x"
@@ -860,8 +870,9 @@
                           media="(min-width: 1200px)" width="324" height="350">
                         <source srcset="img/news/news-3-tablet@1x.webp 1x, img/news/news-3-tablet@2x.webp 2x"
                           type="image/webp" width="290" height="330">
-                        <img src="img/news/news-3-tablet@1x.png" srcset="img/news/news-3-tablet@2x.png 2x" alt=""
-                          width="290" height="330" loading="lazy">
+                        <img src="img/news/news-3-tablet@1x.png" srcset="img/news/news-3-tablet@2x.png 2x"
+                          alt="Выпускники стажировки начинают карьеру в международных компаниях" width="290"
+                          height="330" loading="lazy">
                       </picture>
                     </div>
                     <div class="news-item__text">
@@ -874,7 +885,7 @@
                         </h2>
                       </div>
                       <div class="news-item__text-step news-item__text-step--3">
-                        <div class="news-item__text-descr">
+                        <div class="news-item__text-descr news-swiper__slide-descr">
                           <p>
                             Ведущие компании готовы трудоустроить выпускников стажировки
                           </p>
@@ -884,8 +895,8 @@
                         </a>
                       </div>
                     </div>
-                  </article>
-                  <article class="news-swiper__slide news-item swiper-slide">
+                  </div>
+                  <div class="news-swiper__slide news-item swiper-slide">
                     <div class="news-item__img">
                       <picture>
                         <source srcset="img/news/news-3-desk@1x.webp 1x, img/news/news-3-desk@2x.webp 2x"
@@ -894,8 +905,9 @@
                           media="(min-width: 1200px)" width="324" height="350">
                         <source srcset="img/news/news-3-tablet@1x.webp 1x, img/news/news-3-tablet@2x.webp 2x"
                           type="image/webp" width="290" height="330">
-                        <img src="img/news/news-3-tablet@1x.png" srcset="img/news/news-3-tablet@2x.png 2x" alt=""
-                          width="290" height="330" loading="lazy">
+                        <img src="img/news/news-3-tablet@1x.png" srcset="img/news/news-3-tablet@2x.png 2x"
+                          alt="Выпускники стажировки начинают карьеру в международных компаниях" width="290"
+                          height="330" loading="lazy">
                       </picture>
                     </div>
                     <div class="news-item__text">
@@ -908,7 +920,7 @@
                         </h2>
                       </div>
                       <div class="news-item__text-step news-item__text-step--3">
-                        <div class="news-item__text-descr">
+                        <div class="news-item__text-descr news-swiper__slide-descr">
                           <p>
                             Ведущие компании готовы трудоустроить выпускников стажировки
                           </p>
@@ -918,8 +930,8 @@
                         </a>
                       </div>
                     </div>
-                  </article>
-                  <article class="news-swiper__slide news-item swiper-slide">
+                  </div>
+                  <div class="news-swiper__slide news-item swiper-slide">
                     <div class="news-item__img">
                       <picture>
                         <source srcset="img/news/news-3-desk@1x.webp 1x, img/news/news-3-desk@2x.webp 2x"
@@ -928,8 +940,9 @@
                           media="(min-width: 1200px)" width="324" height="350">
                         <source srcset="img/news/news-3-tablet@1x.webp 1x, img/news/news-3-tablet@2x.webp 2x"
                           type="image/webp" width="290" height="330">
-                        <img src="img/news/news-3-tablet@1x.png" srcset="img/news/news-3-tablet@2x.png 2x" alt=""
-                          width="290" height="330" loading="lazy">
+                        <img src="img/news/news-3-tablet@1x.png" srcset="img/news/news-3-tablet@2x.png 2x"
+                          alt="Выпускники стажировки начинают карьеру в международных компаниях" width="290"
+                          height="330" loading="lazy">
                       </picture>
                     </div>
                     <div class="news-item__text">
@@ -942,7 +955,7 @@
                         </h2>
                       </div>
                       <div class="news-item__text-step news-item__text-step--3">
-                        <div class="news-item__text-descr">
+                        <div class="news-item__text-descr news-swiper__slide-descr">
                           <p>
                             Ведущие компании готовы трудоустроить выпускников стажировки
                           </p>
@@ -952,8 +965,8 @@
                         </a>
                       </div>
                     </div>
-                  </article>
-                  <article class="news-swiper__slide news-item swiper-slide">
+                  </div>
+                  <div class="news-swiper__slide news-item swiper-slide">
                     <div class="news-item__img">
                       <picture>
                         <source srcset="img/news/news-3-desk@1x.webp 1x, img/news/news-3-desk@2x.webp 2x"
@@ -962,8 +975,9 @@
                           media="(min-width: 1200px)" width="324" height="350">
                         <source srcset="img/news/news-3-tablet@1x.webp 1x, img/news/news-3-tablet@2x.webp 2x"
                           type="image/webp" width="290" height="330">
-                        <img src="img/news/news-3-tablet@1x.png" srcset="img/news/news-3-tablet@2x.png 2x" alt=""
-                          width="290" height="330" loading="lazy">
+                        <img src="img/news/news-3-tablet@1x.png" srcset="img/news/news-3-tablet@2x.png 2x"
+                          alt="Выпускники стажировки начинают карьеру в международных компаниях" width="290"
+                          height="330" loading="lazy">
                       </picture>
                     </div>
                     <div class="news-item__text">
@@ -976,7 +990,7 @@
                         </h2>
                       </div>
                       <div class="news-item__text-step news-item__text-step--3">
-                        <div class="news-item__text-descr">
+                        <div class="news-item__text-descr news-swiper__slide-descr">
                           <p>
                             Ведущие компании готовы трудоустроить выпускников стажировки
                           </p>
@@ -986,8 +1000,8 @@
                         </a>
                       </div>
                     </div>
-                  </article>
-                  <article class="news-swiper__slide news-item swiper-slide">
+                  </div>
+                  <div class="news-swiper__slide news-item swiper-slide">
                     <div class="news-item__img">
                       <picture>
                         <source srcset="img/news/news-3-desk@1x.webp 1x, img/news/news-3-desk@2x.webp 2x"
@@ -996,8 +1010,9 @@
                           media="(min-width: 1200px)" width="324" height="350">
                         <source srcset="img/news/news-3-tablet@1x.webp 1x, img/news/news-3-tablet@2x.webp 2x"
                           type="image/webp" width="290" height="330">
-                        <img src="img/news/news-3-tablet@1x.png" srcset="img/news/news-3-tablet@2x.png 2x" alt=""
-                          width="290" height="330" loading="lazy">
+                        <img src="img/news/news-3-tablet@1x.png" srcset="img/news/news-3-tablet@2x.png 2x"
+                          alt="Выпускники стажировки начинают карьеру в международных компаниях" width="290"
+                          height="330" loading="lazy">
                       </picture>
                     </div>
                     <div class="news-item__text">
@@ -1010,7 +1025,7 @@
                         </h2>
                       </div>
                       <div class="news-item__text-step news-item__text-step--3">
-                        <div class="news-item__text-descr">
+                        <div class="news-item__text-descr news-swiper__slide-descr">
                           <p>
                             Ведущие компании готовы трудоустроить выпускников стажировки
                           </p>
@@ -1020,7 +1035,7 @@
                         </a>
                       </div>
                     </div>
-                  </article>
+                  </div>
                 </div>
 
                 <div class="news-swiper__buttons buttons-group">
@@ -1035,19 +1050,6 @@
                   </button>
                 </div>
               </div>
-
-            </div>
-            <div class="news-content__tabs-panel" id="volunteer">
-
-            </div>
-            <div class="news-content__tabs-panel" id="intern">
-
-            </div>
-            <div class="news-content__tabs-panel" id="career">
-
-            </div>
-            <div class="news-content__tabs-panel" id="travel">
-
             </div>
           </div>
         </div>
@@ -1150,8 +1152,8 @@
                         <picture>
                           <source srcset="img/reviews/reviews-1@1x.webp 1x, img/reviews/reviews-1@2x.webp 2x"
                             type="image/webp" width="60" height="60">
-                          <img src="img/reviews/reviews-1@1x.png" srcset="img/reviews/reviews-1@2x.png 2x" alt=""
-                            width="60" height="60">
+                          <img src="img/reviews/reviews-1@1x.png" srcset="img/reviews/reviews-1@2x.png 2x"
+                            alt="Лола Алекс" width="60" height="60">
                         </picture>
                       </div>
                       <p class="reviews-slider__user-name descr">Лола<br>Алекс</p>
@@ -1184,8 +1186,8 @@
                         <picture>
                           <source srcset="img/reviews/reviews-2@1x.webp 1x, img/reviews/reviews-2@2x.webp 2x"
                             type="image/webp" width="60" height="60">
-                          <img src="img/reviews/reviews-2@1x.png" srcset="img/reviews/reviews-2@2x.png 2x" alt=""
-                            width="60" height="60">
+                          <img src="img/reviews/reviews-2@1x.png" srcset="img/reviews/reviews-2@2x.png 2x"
+                            alt="Давид Иванов" width="60" height="60">
                         </picture>
                       </div>
                       <p class="reviews-slider__user-name descr">Давид<br>Иванов</p>
@@ -1218,8 +1220,8 @@
                         <picture>
                           <source srcset="img/reviews/reviews-2@1x.webp 1x, img/reviews/reviews-2@2x.webp 2x"
                             type="image/webp" width="60" height="60">
-                          <img src="img/reviews/reviews-2@1x.png" srcset="img/reviews/reviews-2@2x.png 2x" alt=""
-                            width="60" height="60">
+                          <img src="img/reviews/reviews-2@1x.png" srcset="img/reviews/reviews-2@2x.png 2x"
+                            alt="Давид Иванов" width="60" height="60">
                         </picture>
                       </div>
                       <p class="reviews-slider__user-name descr">Давид<br>Иванов</p>
@@ -1252,8 +1254,8 @@
                         <picture>
                           <source srcset="img/reviews/reviews-2@1x.webp 1x, img/reviews/reviews-2@2x.webp 2x"
                             type="image/webp" width="60" height="60">
-                          <img src="img/reviews/reviews-2@1x.png" srcset="img/reviews/reviews-2@2x.png 2x" alt=""
-                            width="60" height="60">
+                          <img src="img/reviews/reviews-2@1x.png" srcset="img/reviews/reviews-2@2x.png 2x"
+                            alt="Давид Иванов" width="60" height="60">
                         </picture>
                       </div>
                       <p class="reviews-slider__user-name descr">Давид<br>Иванов</p>
@@ -1284,12 +1286,12 @@
                 <div class="reviews__slider-scrollbar slider-grid__scrollbar swiper-scrollbar"></div>
                 <div class="reviews__slider-nav buttons-group slider-grid__buttons">
                   <button
-                    class="reviews-slider__button--prev slider-grid__button swiper-button-prev buttons-group__btn button"
+                    class="reviews-slider__button reviews-slider__button--prev slider-grid__button swiper-button-prev buttons-group__btn button"
                     type="button">
                     <span class="visually-hidden">Предыдущий слайд</span>
                   </button>
                   <button
-                    class="reviews-slider__button--next slider-grid__button swiper-button-next buttons-group__btn button"
+                    class=" reviews-slider__button reviews-slider__button--next slider-grid__button swiper-button-next buttons-group__btn button"
                     type="button">
                     <span class="visually-hidden">Следующий слайд</span>
                   </button>
@@ -1328,8 +1330,8 @@
               media="(min-width: 1200px)" width="1240" height="486">
             <source srcset="img/contacts/map-tablet@1x.webp 1x, img/contacts/map-tablet@2x.webp 2x" type="image/webp"
               width="290" height="240">
-            <img src="img/contacts/map-tablet@1x.png" srcset="img/contacts/map-tablet@2x.png 2x" alt="" width="290"
-              height="240" loading="lazy">
+            <img src="img/contacts/map-tablet@1x.png" srcset="img/contacts/map-tablet@2x.png 2x"
+              alt="Карта с расположением офиса компании" width="290" height="240" loading="lazy">
           </picture>
         </div>
       </div>
@@ -1365,14 +1367,14 @@
                 </select>
               </div>
               <div class="contact-form__input-wrap contact-form__agreement">
-                <label for="agreement">
+                <label>
                   <input type="checkbox" name="agreement" id="agreement" required>
                   <span>Я согласен на обработку моих персональных<br> данных</span>
                 </label>
               </div>
               <button class="form__button button contact-form__button link link--primary" type="submit">
                 <span>отправить</span>
-                <span class="form__button-icon link--primary-icon"></span>
+                <span class="form__button-icon link__icon"></span>
               </button>
             </form>
           </div>
@@ -1413,17 +1415,20 @@
       </div>
       <ul class="footer__socials list-reset">
         <li class="footer__socials-item">
-          <a class="footer__socials-link footer__socials-link--vk link" href="#" target="_blank">
+          <a class="footer__socials-link footer__socials-link--vk link" href="#" target="_blank"
+            rel="noreferrer noopener">
             <span class="visually-hidden">Профиль ВКонтакте</span>
           </a>
         </li>
         <li class="footer__socials-item">
-          <a class="footer__socials-link footer__socials-link--ok link" href="#" target="_blank">
+          <a class="footer__socials-link footer__socials-link--ok link" href="#" target="_blank"
+            rel="noreferrer noopener">
             <span class="visually-hidden">Профиль в Одноклассниках</span>
           </a>
         </li>
         <li class="footer__socials-item">
-          <a class="footer__socials-link footer__socials-link--reddit link" href="#" target="_blank">
+          <a class="footer__socials-link footer__socials-link--reddit link" href="#" target="_blank"
+            rel="noreferrer noopener">
             <span class="visually-hidden">Профиль в Reddit</span>
           </a>
         </li>
@@ -1438,12 +1443,12 @@
       <h2 class="modal__title contact-form__title title">Напишите нам</h2>
       <p class="modal__descr contact-form__descr descr">Оставьте ваши контакты, если у вас остались вопросы —
         мы на них ответим!</p>
-      <form action="https://echo.htmlacademy.ru/" method="post">
+      <form action="https://echo.htmlacademy.ru/" method="post" novalidate>
         <div class="modal__input-wrap contact-form__input-wrap">
           <label for="feedback-name">Имя</label>
           <input type="text" name="feedback-name" id="feedback-name" required>
         </div>
-        <div class="modal__input-wrap contact-form__input-wrap contact-form__input-wrap--error">
+        <div class="modal__input-wrap contact-form__input-wrap">
           <label for="feedback-tel">Телефон</label>
           <input type="tel" name="feedback-tel" id="feedback-tel" required>
         </div>
@@ -1459,14 +1464,14 @@
           </select>
         </div>
         <div class="modal__input-wrap modal__agreement contact-form__input-wrap contact-form__agreement">
-          <label for="feedback-agreement">
+          <label>
             <input type="checkbox" name="feedback-agreement" id="feedback-agreement" required>
             <span>Я согласен на обработку моих персональных<br> данных</span>
           </label>
         </div>
         <button class="modal__button-submit button contact-form__button link link--primary" type="submit">
           <span>отправить</span>
-          <span class="modal__button-submit--icon link--primary-icon"></span>
+          <span class="link__icon"></span>
         </button>
       </form>
     </div>
@@ -1476,9 +1481,3 @@
 </body>
 
 </html>
-<!-- пример использования спрайта -->
-<!-- <img src="/__spritemap#sprite-logo-view" alt="Это спрайт">
-      <svg>
-        <use href="/__spritemap#sprite-user"></use>
-      </svg> -->
-<!-- примеры требуемых атрибутов data-test="*" -->

@@ -10,7 +10,7 @@
   }
 
   .container {
-    @include flex-column();
+    @include flex-column;
 
     @media (min-width: $vp-tablet) {
       display: grid;
@@ -27,7 +27,7 @@
 }
 
 .footer__logo {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   width: 52px;
   height: 52px;
 
@@ -80,6 +80,7 @@
   text-transform: none;
   letter-spacing: 0.11px;
   color: $color-base-primary;
+  transition: color 0.3s ease-in-out;
 
   @media (min-width: $vp-tablet) {
     font-size: 16px;
@@ -87,13 +88,29 @@
   }
 
   @media (min-width: $vp-desktop) {
-    line-height: 26px
+    line-height: 26px;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: rgba(49, 109, 194, 0.7);
+    }
+  }
+
+  &:focus-visible {
+    outline: none;
+    color: $color-base-secondary;
+  }
+
+  &:active {
+    color: $color-state-active;
   }
 }
 
 .footer__copy {
-  @include flex-column();
-  margin-bottom: 14.5px;
+  @include flex-column;
+
+  margin-bottom: 15px;
 
   @media (min-width: $vp-tablet) {
     align-items: flex-start;
@@ -117,19 +134,13 @@
   text-transform: none;
   letter-spacing: normal;
   color: $color-base-primary;
+  transition: color 0.3s ease-in-out;
 
   &::before {
-    content: "";
-    position: absolute;
-    display: block;
-    height: 1px;
-    bottom: -3px;
-    left: 0;
-    right: 0;
-    transform-origin: center;
+    @include link-decoration-line($color-base-primary, 1px, -3px);
+
     transform: scaleX(1);
-    background-color: $color-base-primary;
-    transition: transform 0.3s ease;
+    transition: background-color 0.3s ease-in-out;
   }
 
   @media (min-width: $vp-tablet) {
@@ -140,6 +151,33 @@
   @media (min-width: $vp-desktop) {
     font-size: 14px;
     line-height: 18px;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: rgba(49, 109, 194, 0.7);
+    }
+
+    &:hover::before {
+      background-color: rgba(49, 109, 194, 0.7);
+    }
+  }
+
+  &:focus-visible {
+    outline: none;
+    color: $color-base-secondary;
+
+    &::before {
+      background-color: $color-base-secondary;
+    }
+  }
+
+  &:active {
+    color: $color-state-active;
+
+    &::before {
+      background-color: $color-state-active;
+    }
   }
 }
 
@@ -180,7 +218,6 @@
 }
 
 .footer__socials-link {
-  display: block;
   width: 26px;
   height: 26px;
   border-radius: 50%;
@@ -196,6 +233,7 @@
     width: 12px;
     height: 12px;
     mask-size: 12px;
+    transition: background-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
 
     @media (min-width: $vp-tablet) {
       width: 16px;
@@ -207,6 +245,30 @@
   @media (min-width: $vp-tablet) {
     width: 36px;
     height: 36px;
+  }
+
+  @media (hover: hover) {
+    &:hover::before {
+      opacity: 0.7;
+    }
+  }
+
+  &:focus-visible {
+    background-color: $color-white;
+
+    &::before {
+      opacity: 1;
+      background-color: $color-base-secondary;
+    }
+  }
+
+  &:active {
+    background-color: $color-state-active;
+
+    &::before {
+      opacity: 1;
+      background-color: $color-white;
+    }
   }
 }
 

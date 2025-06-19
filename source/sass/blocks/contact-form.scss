@@ -4,6 +4,7 @@
 
 .contact-form__input-wrap {
   @include flex-column(flex-start);
+
   margin-bottom: 20px;
 
   @media (min-width: $vp-desktop) {
@@ -52,8 +53,8 @@
     }
 
     &:disabled {
-      border-color: rgba(255, 255, 255, 0.40);
-      background-color: rgba(255, 255, 255, 0.20);
+      border-color: rgba(255, 255, 255, 0.4);
+      background-color: rgba(255, 255, 255, 0.2);
       pointer-events: none;
     }
   }
@@ -68,14 +69,15 @@
 }
 
 .contact-form__input-wrap.contact-form__input-wrap--error {
-  input {
+  input,
+  textarea {
     border-color: $color-error;
-    background-color: rgba(255, 94, 102, 0.20);
+    background-color: rgba(255, 94, 102, 0.2);
   }
 
   .contact-form__select {
     border-color: $color-error;
-    background-color: rgba(255, 94, 102, 0.20);
+    background-color: rgba(255, 94, 102, 0.2);
   }
 }
 
@@ -145,13 +147,14 @@
 
     &:disabled {
       border-color: $color-white;
-      background-color: rgba(255, 255, 255, 0.60);
+      background-color: rgba(255, 255, 255, 0.6);
       pointer-events: none;
     }
   }
 
   input:checked::before {
     @include icons-mask($color-base-secondary, url("/__spritemap#sprite-check-view"));
+
     content: "";
     position: absolute;
     left: 50%;

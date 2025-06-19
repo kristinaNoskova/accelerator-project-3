@@ -1,5 +1,9 @@
 .header-nav .container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+
+  @media (min-width: $vp-tablet) {
+    align-items: center;
+  }
 }

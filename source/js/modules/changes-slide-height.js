@@ -1,7 +1,6 @@
 const equalizeSlideHeights = (swiperSelector) => {
   const slides = document.querySelectorAll(`${swiperSelector} .swiper-slide`);
   const wrapper = document.querySelector(`${swiperSelector} .swiper-wrapper`);
-
   slides.forEach((slide) => {
     slide.style.height = 'auto';
   });
@@ -19,6 +18,7 @@ const equalizeSlideHeights = (swiperSelector) => {
     slide.style.height = `${maxHeight}px`;
   });
 };
+
 
 const observeSlideChanges = (swiperSelector) => {
   const swiper = document.querySelector(swiperSelector);

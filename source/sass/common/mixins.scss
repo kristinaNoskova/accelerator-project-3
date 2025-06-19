@@ -39,13 +39,13 @@
 }
 
 @mixin corner-deco($width,
-  $height,
-  $right: 0,
-  $background-color,
-  $bottom: 0,
-  $left: auto,
-  $top: auto,
-  $mask-size: 100%) {
+$height,
+$right: 0,
+$background-color,
+$bottom: 0,
+$left: auto,
+$top: auto,
+$mask-size: 100%) {
   position: relative;
 
   &::before {
@@ -61,4 +61,18 @@
 
     @include icons-mask($background-color, url("/__spritemap#sprite-angle-view"));
   }
+}
+
+@mixin link-decoration-line($bg-color: $color-base-primary, $height: 1px, $bottom: -5px) {
+  content: "";
+  position: absolute;
+  display: block;
+  height: $height;
+  bottom: $bottom;
+  left: 0;
+  right: 0;
+  transform-origin: center;
+  transform: scaleX(0);
+  background-color: $bg-color;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }

@@ -115,7 +115,7 @@
   }
 
   p {
-    padding: 0 16px 20px;
+    padding: 0 15px 20px;
     margin: 0;
     font-size: 14px;
     line-height: 20px;
@@ -200,6 +200,15 @@
   .accordeon__button-plus::before,
   .accordeon__button-plus::after {
     background-color: $color-white;
+  }
+}
+
+.accordeon__item:has(.accordeon__button:disabled) {
+  pointer-events: none;
+
+  .accordeon__button-plus {
+    border-color: $color-disabled;
+    background-color: $color-disabled;
   }
 }
 

@@ -14,7 +14,7 @@
     flex-wrap: wrap;
     margin: 0;
     margin-bottom: 30px;
-    column-gap: 8px;
+    column-gap: 19px;
     overflow-x: visible;
   }
 
@@ -39,20 +39,34 @@
   background-color: $color-transparent;
   border-radius: 20px;
   border: 2px solid $color-transparent;
-  transform: border-color 0.3s ease, opacity 0.3s ease;
+  transition: border-color 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
 
   @media (min-width: $vp-tablet) {
-    padding: 14px 18px;
+    padding: 14px 12px;
+    min-width: 96px;
+    max-width: 250px;
     font-size: 14px;
     line-height: 14px;
     letter-spacing: 0.28px;
   }
 
-  @media (min-width: $vp-tablet) {
+  @media (min-width: $vp-desktop) {
     padding: 14px 2px;
     min-width: 120px;
     max-width: 250px;
     overflow-wrap: break-word;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &:focus-visible {
+    opacity: 1;
+    background-color: $color-white;
+    outline: none;
   }
 }
 

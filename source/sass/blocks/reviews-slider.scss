@@ -91,6 +91,7 @@
 
 .reviews-slider__detail {
   @include flex-column(flex-start);
+
   gap: 8px;
 }
 

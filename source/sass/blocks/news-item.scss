@@ -1,14 +1,27 @@
-.news-item.swiper-slide {
+.news-item__content {
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 100%;
   border-radius: 12px;
   overflow: hidden;
+
+  @media (min-width: $vp-desktop) {
+    max-height: 100%;
+  }
+}
+
+.news-item__content:nth-child(2) {
+  .news-item__text-step--3 {
+    padding-bottom: 2px;
+
+    @media (min-width: $vp-tablet) {
+      padding-bottom: 0;
+    }
+  }
 }
 
 .news-swiper__slide:nth-child(3n - 2) {
   @media (min-width: $vp-desktop) {
-
     .news-item__text-date {
       padding: 12px 13px 6px 0;
     }
@@ -44,12 +57,24 @@
 }
 
 .news-item__text {
-  @include corner-deco(16px, 16px, auto, $color-bg-primary, auto, 0, -16px);
+  @include corner-deco(16px, 16px, auto, $color-bg-primary, auto, 0, 0);
+
   grid-column: 1;
   grid-row: 1;
   position: relative;
   z-index: 10;
   align-self: end;
+  padding-top: 16px;
+  max-height: 290px;
+  overflow-y: auto;
+
+  @media (min-width: $vp-tablet) {
+    max-height: 350px;
+  }
+
+  @media (min-width: $vp-desktop) {
+    max-height: 400px;
+  }
 }
 
 .news-item__text-date {
@@ -64,7 +89,7 @@
 }
 
 .news-item__text-title {
-  padding: 10px 0 3px;
+  padding: 10px 0 4px;
   font-size: 16px;
   font-weight: 400;
   line-height: 18px;
@@ -84,13 +109,10 @@
 }
 
 .news-item__text-descr {
-  max-height: 200px;
-  overflow-y: auto;
-
   p {
     max-width: 90%;
     margin: 0;
-    padding: 13px 0 10px;
+    padding: 12px 0 10px;
     font-size: 12px;
     font-weight: 400;
     line-height: 14px;
@@ -106,18 +128,11 @@
       line-height: 18px;
     }
   }
-
-  @media (min-width: $vp-tablet) {
-    max-height: 250px;
-  }
-
-  @media (min-width: $vp-desktop) {
-    max-height: auto;
-  }
 }
 
 .news-item__text-step {
   @include corner-deco(16px, 16px, -16px, $color-bg-primary);
+
   background-color: $color-bg-primary;
   border-radius: 0 12px 0 0;
 }
@@ -125,6 +140,11 @@
 .news-item__text-step--1 {
   width: max-content;
   max-width: 100px;
+  padding-left: 1px;
+
+  @media (min-width: $vp-tablet) {
+    padding-left: 0;
+  }
 }
 
 .news-item__text-step--2 {
@@ -145,7 +165,7 @@
   justify-content: space-between;
   padding-right: 10px;
   column-gap: 10px;
-  width: 91%;
+  width: 90.7%;
 
   @media (min-width: $vp-tablet) {
     width: 74%;

@@ -1,5 +1,5 @@
 import {createSwiperIfExists} from './utils';
-import {Navigation, Pagination, A11y, Scrollbar} from 'swiper/modules';
+import {Navigation, Pagination, A11y, Scrollbar, EffectFade} from 'swiper/modules';
 import {equalizeSlideHeights, observeSlideChanges} from './changes-slide-height.js';
 
 const movePagination = (swiper) => {
@@ -27,12 +27,18 @@ const initHeroSlider = () => {
     loop: true,
     speed: 800,
     slidesPerView: 1,
-    modules: [Pagination, Navigation, A11y],
+    modules: [Pagination, Navigation, A11y, EffectFade],
     watchSlidesVisibility: true,
     simulateTouch: true,
     touchRatio: 1.5,
     threshold: 10,
     autoHeight: true,
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+    preloadImages: false,
+    watchSlidesProgress: true,
     breakpoints: {
       1200: {
         allowTouchMove: false,
@@ -63,6 +69,16 @@ const initHeroSlider = () => {
   });
 };
 
+function updateTabIndex(swiper) {
+  swiper.slides.forEach((slide) => {
+    const interactiveElements = slide.querySelectorAll('a, button, input, select, textarea, [tabindex]');
+    if (slide.classList.contains('swiper-slide-visible')) {
+      interactiveElements.forEach((el) => el.setAttribute('tabindex', '0'));
+    } else {
+      interactiveElements.forEach((el) => el.setAttribute('tabindex', '-1'));
+    }
+  });
+}
 
 const initSliders = (swiperSelector, buttonNext, buttonPrev, scrollbar, countSlides) => {
 
@@ -77,9 +93,14 @@ const initSliders = (swiperSelector, buttonNext, buttonPrev, scrollbar, countSli
     slidesPerView: 'auto',
     slidesPerGroup: 1,
     spaceBetween: 20,
+    watchSlidesProgress: true,
     breakpoints: {
       768: { spaceBetween: 30 },
-      1200: { slidesPerView: countSlides, spaceBetween: 32 },
+      1200: {
+        slidesPerView: countSlides,
+        spaceBetween: 32,
+        allowTouchMove: false,
+      },
     },
     navigation: {
       nextEl: buttonNext,
@@ -93,10 +114,18 @@ const initSliders = (swiperSelector, buttonNext, buttonPrev, scrollbar, countSli
 
     observer: true,
     observeParents: true,
+
     on: {
       init: function () {
         equalizeSlideHeights(swiperSelector);
         observeSlideChanges(swiperSelector);
+        updateTabIndex(this);
+      },
+      slideChange: function() {
+        updateTabIndex(this);
+      },
+      transitionEnd: function() {
+        updateTabIndex(this);
       },
       resize: function () {
         equalizeSlideHeights(swiperSelector);
@@ -104,7 +133,6 @@ const initSliders = (swiperSelector, buttonNext, buttonPrev, scrollbar, countSli
     }
   });
 };
-
 
 const initProgramsSlider = () => {
   initSliders('.programs-swiper',
@@ -127,5 +155,6 @@ const initReviewsSlider = () => {
 export {
   initHeroSlider,
   initProgramsSlider,
-  initReviewsSlider
+  initReviewsSlider,
+  updateTabIndex
 };

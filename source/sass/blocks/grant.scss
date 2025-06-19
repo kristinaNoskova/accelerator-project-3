@@ -125,12 +125,12 @@
 }
 
 .grant__process-item {
-  padding: 24px 26px;
+  padding: 24px 24px 24px 25px;
   counter-increment: step-counter;
 
   @media (min-width: $vp-tablet) {
     height: 100%;
-    padding: 30px 26px;
+    padding: 30px 26px 30px 25px;
     font-size: 16px;
     line-height: 20px;
   }
@@ -146,8 +146,8 @@
     content: counter(step-counter);
     width: 29px;
     height: 32px;
-    top: -5px;
-    left: -14px;
+    top: -5.5px;
+    left: -14.5px;
     font-size: 18px;
     font-weight: 500;
     line-height: 18px;

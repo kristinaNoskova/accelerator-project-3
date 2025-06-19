@@ -2,23 +2,30 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
-import { throttle } from './modules/throttle.js';
+import 'swiper/css/effect-fade';
+
+
+import { throttle, debounce } from './modules/throttle-debounce.js';
 import {initCustomSelect} from './modules/custom-select.js';
 import {
   initMobileMenu,
   initSubmenu,
   closeMenuOnOutsideClick
 } from './modules/menu.js';
+
 import {
   initHeroSlider,
   initProgramsSlider,
   initReviewsSlider
 } from './modules/swiper.js';
-import './modules/news-sliders.js';
+
+import {setupSlider} from'./modules/news-slider.js';
 import { initAccordeon, onResize } from './modules/accordeon.js';
-import './modules/form-validate.js';
-import './modules/modal.js';
+import {initValidation} from './modules/form-validate.js';
+import {initModal} from './modules/modal.js';
+
 const throttledResize = throttle(onResize, 200);
+const debounceResize = debounce(setupSlider, 200);
 
 window.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
@@ -30,6 +37,12 @@ window.addEventListener('DOMContentLoaded', () => {
   initReviewsSlider();
   initCustomSelect('#sity');
   initCustomSelect('#feedback-sity');
+  initValidation();
+  initModal();
+  setupSlider();
 
-  window.addEventListener('resize', throttledResize);
+  window.addEventListener('resize', () => {
+    debounceResize();
+    throttledResize();
+  });
 });

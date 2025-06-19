@@ -9,26 +9,9 @@
   color: $color-base-secondary;
   text-decoration: none;
   cursor: pointer;
-
-  &--primary {
-    display: flex;
-    padding: 4px 4px 4px 20px;
-    align-items: center;
-    justify-content: space-between;
-    gap: 17px;
-    border-radius: 30px;
-    border: 1px solid $color-base-secondary;
-
-    @media (min-width: $vp-tablet) {
-      padding: 4px 5px 4px 31px;
-      font-size: 14px;
-      line-height: 14px;
-      letter-spacing: 0.28px;
-    }
-  }
 }
 
-.link--primary-icon {
+.link__icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,6 +31,7 @@
 
   &::after {
     @include icons-mask ($color-white, url("/__spritemap#sprite-arrow-view"));
+
     content: "";
     width: 8px;
     height: 8px;
@@ -56,7 +40,21 @@
 }
 
 .link--primary {
+  display: flex;
+  padding: 4px 4px 4px 20px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 17px;
+  border-radius: 30px;
+  border: 1px solid $color-base-secondary;
   transition: color 0.3s ease-in-out 0.2s, background-color 0.3s ease-in-out;
+
+  @media (min-width: $vp-tablet) {
+    padding: 4px 5px 4px 31px;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: 0.28px;
+  }
 
   span:first-child {
     white-space: normal;
@@ -74,11 +72,11 @@
       color: $color-white;
     }
 
-    &:hover .link--primary-icon {
+    &:hover .link__icon {
       background-color: $color-white;
     }
 
-    &:hover .link--primary-icon::after {
+    &:hover .link__icon::after {
       background-color: $color-base-secondary;
       transform: rotate(45deg);
     }
@@ -92,7 +90,7 @@
   &:focus-visible {
     opacity: 1;
 
-    .link--primary-icon::after {
+    .link__icon::after {
       transform: rotate(45deg);
     }
   }
@@ -106,11 +104,11 @@
       color: $color-disabled;
     }
 
-    .link--primary-icon {
+    .link__icon {
       background-color: $color-disabled;
     }
 
-    .link--primary-icon::after {
+    .link__icon::after {
       opacity: 0.6;
     }
   }
@@ -125,11 +123,11 @@
     color: $color-disabled;
   }
 
-  .link--primary-icon {
+  .link__icon {
     background-color: $color-disabled;
   }
 
-  .link--primary-icon::after {
+  .link__icon::after {
     opacity: 0.6;
   }
 }
@@ -147,6 +145,7 @@
 
   &::after {
     @include icons-mask ($color-white, url("/__spritemap#sprite-arrow-view"));
+
     content: "";
     width: 8px;
     height: 10px;
@@ -175,7 +174,6 @@
 
   &:focus-visible {
     opacity: 1;
-    outline: none;
 
     &::after {
       transform: rotate(45deg);

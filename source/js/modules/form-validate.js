@@ -1,26 +1,37 @@
 import IMask from '../vendor/imask.js';
-
+import {modalCloseHandler} from './modal.js';
 const sectionFormElement = document.querySelector('.form');
 const formElement = sectionFormElement.querySelector('form');
+const modalFeedbackElement = document.querySelector('.modal');
+const formFeedbackElement = modalFeedbackElement.querySelector('form');
+
+const fieldsContact = {
+  name: '#name',
+  phone: '#tel',
+  message: '#message',
+  checkbox: '#agreement',
+  select: '#sity',
+};
+const fieldsFeedback = {
+  name: '#feedback-name',
+  phone: '#feedback-tel',
+  checkbox: '#feedback-agreement',
+  select: '#feedback-sity',
+};
 
 const REGEXP = {
   phone: /^(?:\+7|8) \(\d{3}\) \d{3}-\d{2}-\d{2}$/,
-  name: /^[А-ЯЁ][а-яё]+(?:-[А-ЯЁ][а-яё]+)?$/
+  name: /^([А-ЯЁ][а-яё]+)(?:\s+[А-ЯЁ][а-яё]+(?:-[А-ЯЁ][а-яё]+)?)?$/
 };
 
 const MESSAGE = {
   emptyMessage: 'Заполните поле',
   invalidMessagePhone: 'Неверный формат телефона',
-  invalidMessageName: 'Введите корректное имя и фамилию',
+  invalidMessageName: 'Введите корректное имя',
   invalidAgreementName: 'Пожалуйста, подтвердите согласие на обработку данных',
 };
 
-const inputPhone = formElement.querySelector('#tel');
-const inputName = formElement.querySelector('#name');
-const inputMessage = formElement.querySelector('#message');
-const inputAgreement = formElement.querySelector('#agreement');
-
-const validateInput = (input, regex, emptyMessage, invalidMessage) => {
+const validateInput = (input, regex, emptyMessage, invalidMessage, form = null) => {
   const value = input.value.trim();
 
   input.setCustomValidity(' ');
@@ -29,7 +40,7 @@ const validateInput = (input, regex, emptyMessage, invalidMessage) => {
   if (input.type === 'checkbox') {
     if (!input.checked) {
       input.setCustomValidity(invalidMessage);
-      formElement.querySelector('.contact-form__agreement').classList.add('contact-form__input-wrap--error');
+      form.querySelector('.contact-form__agreement').classList.add('contact-form__input-wrap--error');
       return false;
     }
     return true;
@@ -52,111 +63,116 @@ const validateInput = (input, regex, emptyMessage, invalidMessage) => {
   return true;
 };
 
-const validateSelect = (selector) => {
-  const selectEl = document.querySelector(selector);
+const validateSelect = (form, selector) => {
+  const selectEl = form.querySelector(selector);
   const wrapper = selectEl.parentElement;
 
   const isValid = Boolean(selectEl.value);
 
   if (!isValid) {
     wrapper.classList.add('contact-form__input-wrap--error');
-    wrapper.querySelector('.contact-form__select').setAttribute('aria-invalid', 'true');
     return false;
   } else {
     wrapper.classList.remove('contact-form__input-wrap--error');
-    wrapper.querySelector('.contact-form__select').setAttribute('aria-invalid', 'false');
     return true;
   }
 };
 
-[inputPhone, inputName, inputMessage].forEach((input) => {
-  input.addEventListener('input', () => {
-    input.setCustomValidity(' ');
-    input.parentElement.classList.remove('contact-form__input-wrap--error');
-    input.blur();
-    input.focus();
+const fieldsReset = (form, object) => {
+  const inputs = Object.values(object);
+
+  inputs.forEach((selector) => {
+    const field = form.querySelector(selector);
+    field.addEventListener('input', function () {
+      this.setCustomValidity(' ');
+      this.parentElement.classList.remove('contact-form__input-wrap--error');
+      this.blur();
+      this.focus();
+    });
   });
-});
-
-inputAgreement.addEventListener('change', function () {
-  this.setCustomValidity(' ');
-  formElement.querySelector('.contact-form__agreement').classList.remove('contact-form__input-wrap--error');
-  this.blur();
-  this.focus();
-});
-
-const maskOptions = {
-  mask: '+7 (000) 000-00-00'
 };
 
-IMask(inputPhone, maskOptions);
+const checkboxReset = (form, selector) => {
+  form.querySelector(selector).addEventListener('change', function () {
+    this.setCustomValidity(' ');
+    form.querySelector('.contact-form__agreement').classList.remove('contact-form__input-wrap--error');
+    this.blur();
+    this.focus();
+  });
+};
 
-const submitForm = (evt) => {
+const setMaskPhone = (form, inputPhone) => {
+  const maskOptions = {
+    mask: '+7 (000) 000-00-00'
+  };
+
+  return IMask(form.querySelector(inputPhone), maskOptions);
+};
+
+const submitForm = (evt, form, fields) => {
   evt.preventDefault();
 
-  const isNameValid = validateInput(
-    inputName,
-    REGEXP.name,
-    MESSAGE.emptyMessage,
-    MESSAGE.invalidMessageName
-  );
+  const formName = form.querySelector(fields.name);
+  const formPhone = form.querySelector(fields.phone);
+  const formCheckbox = form.querySelector(fields.checkbox);
+  const formMessage = fields.message ? form.querySelector(fields.message) : null;
 
+  if (formName === null || formPhone === null || formCheckbox === null || !fields.select) {
+    return;
+  }
+
+  const isNameValid = validateInput(formName, REGEXP.name, MESSAGE.emptyMessage, MESSAGE.invalidMessageName);
   if (!isNameValid) {
-    inputName.reportValidity();
-    return;
+    return formName.reportValidity();
   }
 
-  const isPhoneValid = validateInput(
-    inputPhone,
-    REGEXP.phone,
-    MESSAGE.emptyMessage,
-    MESSAGE.invalidMessagePhone
-  );
-
+  const isPhoneValid = validateInput(formPhone, REGEXP.phone, MESSAGE.emptyMessage, MESSAGE.invalidMessagePhone);
   if (!isPhoneValid) {
-    inputPhone.reportValidity();
-    return;
+    return formPhone.reportValidity();
   }
 
-  const isMessageValid = validateInput(
-    inputMessage,
-    null,
-    MESSAGE.emptyMessage,
-    ''
-  );
+  if (formMessage) {
+    const isMessageValid = validateInput(formMessage, null, MESSAGE.emptyMessage, '');
+    if (!isMessageValid) {
 
-  if (!isMessageValid) {
-    inputMessage.reportValidity();
-    return;
+      return formMessage.reportValidity();
+    }
   }
 
-  const isSelectValid = validateSelect('#sity');
-
+  const isSelectValid = validateSelect(form,fields.select);
   if (!isSelectValid) {
     return;
   }
 
-
-  const isAgreementValid = validateInput(
-    inputAgreement,
-    null,
-    '',
-    MESSAGE.invalidAgreementName
-  );
-
+  const isAgreementValid = validateInput(formCheckbox, null, '', MESSAGE.invalidAgreementName, form);
   if (!isAgreementValid) {
-    inputAgreement.reportValidity();
-    return;
+    return formCheckbox.reportValidity();
   }
 
-  formElement.submit();
-  formElement.reset();
+  form.submit();
+  form.reset();
+  modalCloseHandler();
 };
 
-const initFormSubmit = () => {
-  formElement.addEventListener('submit', submitForm);
+
+const initFormSubmit = (form, fields) => {
+  form.addEventListener('submit', (evt) => {
+    submitForm(evt, form, fields);
+  });
 };
 
-initFormSubmit();
+const initValidation = () => {
+  fieldsReset(formElement, fieldsContact);
+  fieldsReset(formFeedbackElement, fieldsFeedback);
 
-export {initFormSubmit};
+  checkboxReset(formElement, fieldsContact.checkbox);
+  checkboxReset(formFeedbackElement, fieldsFeedback.checkbox);
+
+  setMaskPhone(formElement, fieldsContact.phone);
+  setMaskPhone(formFeedbackElement, fieldsFeedback.phone);
+
+  initFormSubmit(formElement, fieldsContact);
+  initFormSubmit(formFeedbackElement, fieldsFeedback);
+};
+
+export { initValidation };

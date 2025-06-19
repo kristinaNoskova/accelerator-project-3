@@ -2,15 +2,14 @@
   position: relative;
 }
 
-.main-nav__button {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 134px;
-  padding: 4px 4px 4px 20px;
-  border-radius: 30px;
-  border: 1px solid $color-base-secondary;
-  transition: width 0.3s ease, background-color 0.3s ease;
+.main-nav .main-nav__overlay {
+  position: fixed;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  background-color: $color-overlay-modal;
+  transition: opacity 0.3s ease;
 }
 
 .main-nav__button-burger {
@@ -18,15 +17,17 @@
   z-index: 90;
   width: 46px;
   height: 46px;
+  flex-shrink: 0;
   background-color: $color-base-secondary;
   border-radius: 50%;
+  transition: background-color 0.3s ease-in;
 
   &::before,
   &::after {
     content: "";
     position: absolute;
     display: block;
-    padding: 0px 1px;
+    padding: 0 1px;
     height: 1.5px;
     left: 50%;
     width: 16px;
@@ -34,7 +35,7 @@
     border-radius: 2px;
     transform: translateX(-50%);
     transform-origin: center;
-    transition: transform 0.3s ease, top 0.3s ease;
+    transition: transform 0.3s ease, top 0.3s ease, background-color 0.3s ease-in 0.1s;
   }
 
   &::before {
@@ -46,35 +47,90 @@
   }
 }
 
-.main-nav__button-burger--line {
+.main-nav__button-line {
   position: absolute;
   display: block;
   height: 1.5px;
   width: 16px;
-  padding: 0px 1px;
+  padding: 0 1px;
   left: 50%;
   top: 50%;
   border-radius: 2px;
   transform: translate(-50%) scaleX(1);
   transform-origin: left;
   background-color: $color-white;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease-in 0.1s;
+}
+
+.main-nav__button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  width: 136px;
+  padding: 3px 4px 3px 20px;
+  border-radius: 30px;
+  border: 1px solid $color-base-secondary;
+  transition: color 0.3s ease-in-out 0.2s, background-color 0.3s ease-out;
+
+  span:first-child {
+    white-space: normal;
+    overflow-wrap: break-word;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  @media (hover: hover) {
+    &:hover span {
+      color: $color-white;
+    }
+
+    &:hover .main-nav__button-burger {
+      background-color: $color-white;
+    }
+
+    &:hover,
+    &:hover .main-nav__button-line,
+    &:hover .main-nav__button-burger::after,
+    &:hover .main-nav__button-burger::before {
+      background-color: $color-base-secondary;
+    }
+  }
+
+  &:focus-visible span {
+    color: $color-white;
+  }
+
+  &:focus-visible .main-nav__button-burger {
+    background-color: $color-white;
+  }
+
+  &:focus-visible,
+  &:focus-visible .main-nav__button-line,
+  &:focus-visible .main-nav__button-burger::after,
+  &:focus-visible .main-nav__button-burger::before {
+    outline: none;
+    background-color: $color-base-secondary;
+  }
 }
 
 .main-nav__menu {
   @include flex-column(flex-start);
+
   row-gap: 28px;
   position: absolute;
   z-index: 90;
   right: 0;
   top: 104%;
   width: 290px;
+  max-height: 430px;
   padding: 35px 25px;
   transform-origin: top right;
   transform: scale(0);
   opacity: 0;
   overflow-y: auto;
   border-radius: 16px;
+  pointer-events: none;
   background-color: $color-base-secondary;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
@@ -87,15 +143,36 @@
   text-transform: uppercase;
   opacity: 0.7;
   color: $color-white;
+  transition: opacity 0.3s ease-in-out;
+
+  @media (hover: hover) {
+    &:hover,
+    &:hover::after {
+      opacity: 1;
+    }
+  }
+
+  &:active,
+  &:focus-visible {
+    outline: none;
+    opacity: 1;
+
+    &::after {
+      opacity: 1;
+    }
+  }
 }
 
 .main-nav--open .main-nav__menu {
   opacity: 1;
+  pointer-events: auto;
   transform: scale(1);
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .main-nav--open .main-nav__button {
+  position: relative;
+  z-index: 90;
   width: 290px;
   background-color: $color-base-secondary;
   transition: width 0.3s ease, background-color 0.3s ease;
@@ -107,9 +184,7 @@
 
 .main-nav--open .main-nav__button-burger {
   background-color: $color-white;
-}
 
-.main-nav--open .main-nav__button-burger {
   &::before {
     transform: translate(-50%) rotate(45deg);
     top: 50%;
@@ -125,14 +200,21 @@
   }
 }
 
-.main-nav--open .main-nav__button-burger--line {
+.main-nav--open .main-nav__button-line {
   transform: translate(-50%) scaleX(0);
   opacity: 0;
   transition: opacity 0.3s ease, transform 0.2s ease;
 }
 
+.main-nav--open .main-nav__overlay {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
 .main-nav__submenu {
   @include flex-column(flex-start);
+
   row-gap: 16px;
   padding-left: 16px;
   max-height: 0;
@@ -156,9 +238,20 @@
   text-transform: none;
   transition: opacity 0.3s ease;
 
-
   &::first-letter {
     text-transform: uppercase;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &:active,
+  &:focus-visible {
+    opacity: 1;
+    outline: none;
   }
 }
 
@@ -171,6 +264,7 @@
 
   .main-nav__menu-link::after {
     @include icons-mask($color-white, url("/__spritemap#sprite-arrow-down-view"));
+
     content: "";
     width: 14px;
     height: 14px;
@@ -180,7 +274,6 @@
 }
 
 .main-nav__menu-item.has-submenu--visible {
-
   .main-nav__submenu,
   .main-nav__menu-link {
     opacity: 1;
@@ -190,4 +283,8 @@
     opacity: 1;
     transform: rotate(-180deg);
   }
+}
+
+html:has(.main-nav--open) {
+  scrollbar-gutter: stable;
 }

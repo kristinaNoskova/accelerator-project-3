@@ -1,16 +1,38 @@
+import { initCloseKeydown} from './close-esc.js';
+import { lockScroll, unlockScroll } from './scroll-lock.js';
+
 const menuElement = document.querySelector('.main-nav');
+const menuListElement = menuElement.querySelector('.main-nav__menu');
 const menuItemElements = document.querySelectorAll('.main-nav__menu-item');
 const bodyElement = document.querySelector('.page-body');
 const burgerButtonElement = menuElement.querySelector('.main-nav__button');
+const overlayElement = menuElement.querySelector('.main-nav__overlay');
+
 
 const isMenuToggle = (method) => {
   menuElement.classList[method]('main-nav--open');
   bodyElement.classList[method]('page-body--overlay');
+  if(menuElement.classList.contains('main-nav--open')) {
+    lockScroll();
+  } else {
+    unlockScroll();
+  }
 };
+
+initCloseKeydown(isMenuToggle, 'remove');
 
 const initMobileMenu = () => {
   burgerButtonElement.addEventListener('click', () => {
     isMenuToggle('toggle');
+
+    const isOpen = menuElement.classList.contains('main-nav--open');
+    if (isOpen) {
+      menuListElement.removeAttribute('inert');
+      menuListElement.removeAttribute('aria-hidden');
+    } else {
+      menuListElement.setAttribute('inert', '');
+      menuListElement.setAttribute('aria-hidden', 'true');
+    }
   });
 
   menuElement.addEventListener('click', (event) => {
@@ -24,32 +46,23 @@ const initMobileMenu = () => {
 
 const initSubmenu = () => {
   menuItemElements.forEach((item) => {
-    const itemSubmenu = item.querySelector('.main-nav__submenu');
+    if (item.classList.contains('has-submenu')) {
+      const toggleLink = item.querySelector('.main-nav__menu-link');
+      const submenu = item.querySelector('.main-nav__submenu');
 
-    if(item.classList.contains('has-submenu')) {
-      item.addEventListener('click', (evt) => {
+      toggleLink.addEventListener('click', (evt) => {
         evt.preventDefault();
 
-        item.classList.toggle('has-submenu--visible');
-
-        if(item.classList.contains('has-submenu--visible')) {
-          itemSubmenu.style.maxHeight = `${itemSubmenu.scrollHeight}px`;
-        } else {
-          itemSubmenu.style.maxHeight = null;
-        }
+        const isOpen = item.classList.toggle('has-submenu--visible');
+        submenu.style.maxHeight = isOpen ? `${submenu.scrollHeight}px` : null;
       });
     }
   });
 };
 
 const closeMenuOnOutsideClick = () => {
-  document.addEventListener('click', (event) => {
-    const isClickInsideMenu = menuElement.contains(event.target);
-    const isClickOnToggle = burgerButtonElement.contains(event.target);
-
-    if (!isClickInsideMenu && !isClickOnToggle) {
-      isMenuToggle('remove');
-    }
+  overlayElement.addEventListener('click', () => {
+    isMenuToggle('remove');
   });
 };
 

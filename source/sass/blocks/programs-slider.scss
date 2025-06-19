@@ -1,7 +1,7 @@
 .programs-slider__swiper.swiper {
-
   .programs-slider__slide {
     @include overlay($color-overlay-photo);
+
     position: relative;
     display: flex;
     align-items: flex-end;
@@ -15,14 +15,14 @@
     background-position: center;
     background-repeat: no-repeat;
 
-    @media(min-width: $vp-tablet) {
+    @media (min-width: $vp-tablet) {
       min-width: 324px;
       max-width: 324px;
       min-height: 420px;
       padding: 10px 20px;
     }
 
-    @media(min-width: $vp-desktop) {
+    @media (min-width: $vp-desktop) {
       width: 392px;
       min-width: auto;
       max-width: none;
@@ -32,67 +32,76 @@
 }
 
 .programs-slider__slide--1 {
-  background-image: image-set(url('../../img/programs/programs-1-mob@1x.webp') type('image/webp') 1x,
-      url('../../img/programs/programs-1-mob@2x.webp') type('image/webp') 2x,
-      url('../../img/programs/programs-1-mob@1x.jpg') type('image/jpeg') 1x,
-      url('../../img/programs/programs-1-mob@2x.jpg') type('image/jpeg') 2x);
+  background-image:
+    image-set(url("../img/programs/programs-1-mob@1x.webp") type("image/webp") 1x,
+    url("../img/programs/programs-1-mob@2x.webp") type("image/webp") 2x,
+    url("../img/programs/programs-1-mob@1x.jpg") type("image/jpeg") 1x,
+    url("../img/programs/programs-1-mob@2x.jpg") type("image/jpeg") 2x);
 
 
   @media (min-width: $vp-tablet) {
-    background-image: image-set(url('../../img/programs/programs-1-tablet@1x.webp') type('image/webp') 1x,
-        url('../../img/programs/programs-1-tablet@2x.webp') type('image/webp') 2x,
-        url('../../img/programs/programs-1-tablet@1x.jpg') type('image/jpeg') 1x,
-        url('../../img/programs/programs-1-tablet@2x.jpg') type('image/jpeg') 2x);
+    background-image:
+      image-set(url("../img/programs/programs-1-tablet@1x.webp") type("image/webp") 1x,
+      url("../img/programs/programs-1-tablet@2x.webp") type("image/webp") 2x,
+      url("../img/programs/programs-1-tablet@1x.jpg") type("image/jpeg") 1x,
+      url("../img/programs/programs-1-tablet@2x.jpg") type("image/jpeg") 2x);
   }
 
   @media (min-width: $vp-desktop) {
-    background-image: image-set(url('../../img/programs/programs-1-desk@1x.webp') type('image/webp') 1x,
-        url('../../img/programs/programs-1-desk@2x.webp') type('image/webp') 2x,
-        url('../../img/programs/programs-1-desk@1x.jpg') type('image/jpeg') 1x,
-        url('../../img/programs/programs-1-desk@2x.jpg') type('image/jpeg') 2x);
+    background-image:
+      image-set(url("../img/programs/programs-1-desk@1x.webp") type("image/webp") 1x,
+      url("../img/programs/programs-1-desk@2x.webp") type("image/webp") 2x,
+      url("../img/programs/programs-1-desk@1x.jpg") type("image/jpeg") 1x,
+      url("../img/programs/programs-1-desk@2x.jpg") type("image/jpeg") 2x);
   }
 }
 
 .programs-slider__slide--2 {
-  background-image: image-set(url('../../img/programs/programs-2-mob@1x.webp') type('image/webp') 1x,
-      url('../../img/programs/programs-2-mob@2x.webp') type('image/webp') 2x,
-      url('../../img/programs/programs-2-mob@1x.jpg') type('image/jpeg') 1x,
-      url('../../img/programs/programs-2-mob@2x.jpg') type('image/jpeg') 2x);
+  background-image:
+    image-set(url("../img/programs/programs-2-mob@1x.webp") type("image/webp") 1x,
+    url("../img/programs/programs-2-mob@2x.webp") type("image/webp") 2x,
+    url("../img/programs/programs-2-mob@1x.jpg") type("image/jpeg") 1x,
+    url("../img/programs/programs-2-mob@2x.jpg") type("image/jpeg") 2x);
 
   @media (min-width: $vp-tablet) {
-    background-image: image-set(url('../../img/programs/programs-2-tablet@1x.webp') type('image/webp') 1x,
-        url('../../img/programs/programs-2-tablet@2x.webp') type('image/webp') 2x,
-        url('../../img/programs/programs-2-tablet@1x.jpg') type('image/jpeg') 1x,
-        url('../../img/programs/programs-2-tablet@2x.jpg') type('image/jpeg') 2x);
+    background-image:
+      image-set(url("../img/programs/programs-2-tablet@1x.webp") type("image/webp") 1x,
+      url("../img/programs/programs-2-tablet@2x.webp") type("image/webp") 2x,
+      url("../img/programs/programs-2-tablet@1x.jpg") type("image/jpeg") 1x,
+      url("../img/programs/programs-2-tablet@2x.jpg") type("image/jpeg") 2x);
   }
 
   @media (min-width: $vp-desktop) {
-    background-image: image-set(url('../../img/programs/programs-2-desk@1x.webp') type('image/webp') 1x,
-        url('../../img/programs/programs-2-desk@2x.webp') type('image/webp') 2x,
-        url('../../img/programs/programs-2-desk@1x.jpg') type('image/jpeg') 1x,
-        url('../../img/programs/programs-2-desk@2x.jpg') type('image/jpeg') 2x);
+    background-image:
+      image-set(url("../img/programs/programs-2-desk@1x.webp") type("image/webp") 1x,
+      url("../img/programs/programs-2-desk@2x.webp") type("image/webp") 2x,
+      url("../img/programs/programs-2-desk@1x.jpg") type("image/jpeg") 1x,
+      url("../img/programs/programs-2-desk@2x.jpg") type("image/jpeg") 2x);
   }
 }
 
 .programs-slider__slide--3 {
-  background-image: image-set(url('../../img/programs/programs-3-mob@1x.webp') type('image/webp') 1x,
-      url('../../img/programs/programs-3-mob@2x.webp') type('image/webp') 2x,
-      url('../../img/programs/programs-3-mob@1x.jpg') type('image/jpeg') 1x,
-      url('../../img/programs/programs-3-mob@2x.jpg') type('image/jpeg') 2x);
+  background-image:
+    image-set(url("../img/programs/programs-3-mob@1x.webp") type("image/webp") 1x,
+    url("../img/programs/programs-3-mob@2x.webp") type("image/webp") 2x,
+    url("../img/programs/programs-3-mob@1x.jpg") type("image/jpeg") 1x,
+    url("../img/programs/programs-3-mob@2x.jpg") type("image/jpeg") 2x);
 
   @media (min-width: $vp-tablet) {
-    background-image: image-set(url('../../img/programs/programs-3-tablet@1x.webp') type('image/webp') 1x,
-        url('../../img/programs/programs-3-tablet@2x.webp') type('image/webp') 2x,
-        url('../../img/programs/programs-3-tablet@1x.jpg') type('image/jpeg') 1x,
-        url('../../img/programs/programs-3-tablet@2x.jpg') type('image/jpeg') 2x);
+    background-image:
+      image-set(url("../img/programs/programs-3-tablet@1x.webp") type("image/webp") 1x,
+      url("../img/programs/programs-3-tablet@2x.webp") type("image/webp") 2x,
+      url("../img/programs/programs-3-tablet@1x.jpg") type("image/jpeg") 1x,
+      url("../img/programs/programs-3-tablet@2x.jpg") type("image/jpeg") 2x);
   }
 
 
   @media (min-width: $vp-desktop) {
-    background-image: image-set(url('../../img/programs/programs-3-desk@1x.webp') type('image/webp') 1x,
-        url('../../img/programs/programs-3-desk@2x.webp') type('image/webp') 2x,
-        url('../../img/programs/programs-3-desk@1x.jpg') type('image/jpeg') 1x,
-        url('../../img/programs/programs-3-desk@2x.jpg') type('image/jpeg') 2x);
+    background-image:
+      image-set(url("../img/programs/programs-3-desk@1x.webp") type("image/webp") 1x,
+      url("../img/programs/programs-3-desk@2x.webp") type("image/webp") 2x,
+      url("../img/programs/programs-3-desk@1x.jpg") type("image/jpeg") 1x,
+      url("../img/programs/programs-3-desk@2x.jpg") type("image/jpeg") 2x);
   }
 }
 
@@ -103,7 +112,7 @@
   overflow: hidden;
   width: 100%;
 
-  @media(min-width: $vp-desktop) {
+  @media (min-width: $vp-desktop) {
     display: flex;
     flex-direction: column;
     min-height: 122px;
@@ -115,12 +124,12 @@
     line-height: 14px;
     color: $color-base-primary;
 
-    @media(min-width: $vp-tablet) {
+    @media (min-width: $vp-tablet) {
       font-size: 14px;
       line-height: 20px;
     }
 
-    @media(min-width: $vp-desktop) {
+    @media (min-width: $vp-desktop) {
       line-height: 18px;
     }
   }
@@ -128,12 +137,13 @@
 
 .programs-slider__title-wrap {
   @include corner-deco(18px, 18px, -18px, $color-white );
+
   border-radius: 0 12px 0 0;
   width: 54%;
   padding: 18px 2px 6px 18px;
   background-color: $color-white;
 
-  @media(min-width: $vp-tablet) {
+  @media (min-width: $vp-tablet) {
     width: 60.5%;
   }
 }
@@ -146,12 +156,12 @@
   overflow-wrap: break-word;
   color: $color-base-secondary;
 
-  @media(min-width: $vp-tablet) {
+  @media (min-width: $vp-tablet) {
     font-size: 20px;
     line-height: 14px;
   }
 
-  @media(min-width: $vp-desktop) {
+  @media (min-width: $vp-desktop) {
     font-size: 24px;
     line-height: 17px;
   }
@@ -162,7 +172,7 @@
   justify-content: space-between;
   align-items: center;
   column-gap: 16px;
-  padding: 12px 18px 15px 18px;
+  padding: 12px 18px 15px;
   flex-grow: 1;
   border-radius: 0 12px 0 0;
   background-color: $color-white;

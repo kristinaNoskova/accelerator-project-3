@@ -1,17 +1,18 @@
 .form {
-  padding: 40px 0 40px;
+  padding: 40px 0;
 
   @media (min-width: $vp-tablet) {
-    padding: 50px 0 50px;
+    padding: 50px 0;
   }
 
   @media (min-width: $vp-desktop) {
-    padding: 60px 0 60px;
+    padding: 60px 0;
   }
 }
 
 .form__wrapper-bg {
   @include width-100vw;
+
   padding: 43px 10px 40px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -19,9 +20,9 @@
   background-color: $color-base-primary;
   background-image:
     image-set("../img/form/form-bg@1x.webp" type("image/webp") 1x,
-      "../img/form/form-bg@2x.webp" type("image/webp") 2x,
-      "../img/form/form-bg@1x.jpg" type("image/jpeg") 1x,
-      "../img/form/form-bg@2x.jpg" type("image/jpeg") 2x);
+    "../img/form/form-bg@2x.webp" type("image/webp") 2x,
+    "../img/form/form-bg@1x.jpg" type("image/jpeg") 1x,
+    "../img/form/form-bg@2x.jpg" type("image/jpeg") 2x);
 
   @media (min-width: $vp-tablet) {
     width: auto;
@@ -34,29 +35,29 @@
     background-color: $color-base-primary;
     background-image:
       image-set("../img/form/form-bg-tablet@1x.webp" type("image/webp") 1x,
-        "../img/form/form-bg-tablet@2x.webp" type("image/webp") 2x,
-        "../img/form/form-bg-tablet@1x.jpg" type("image/jpeg") 1x,
-        "../img/form/form-bg-tablet@2x.jpg" type("image/jpeg") 2x);
+      "../img/form/form-bg-tablet@2x.webp" type("image/webp") 2x,
+      "../img/form/form-bg-tablet@1x.jpg" type("image/jpeg") 1x,
+      "../img/form/form-bg-tablet@2x.jpg" type("image/jpeg") 2x);
   }
 
   @media (min-width: $vp-desktop) {
     margin: 0;
     background-image:
       image-set("../img/form/form-bg-desk@1x.webp" type("image/webp") 1x,
-        "../img/form/form-bg-desk@2x.webp" type("image/webp") 2x,
-        "../img/form/form-bg-desk@1x.jpg" type("image/jpeg") 1x,
-        "../img/form/form-bg-desk@2x.jpg" type("image/jpeg") 2x);
+      "../img/form/form-bg-desk@2x.webp" type("image/webp") 2x,
+      "../img/form/form-bg-desk@1x.jpg" type("image/jpeg") 1x,
+      "../img/form/form-bg-desk@2x.jpg" type("image/jpeg") 2x);
   }
 }
 
 .form__wrapper {
-  padding: 15px 15px 27px 15px;
+  padding: 15px 15px 27px;
   color: $color-bg-primary;
   background-color: $color-base-secondary;
 
   @media (min-width: $vp-tablet) {
     width: 442px;
-    padding: 41px 40px 36px 40px;
+    padding: 41px 40px 36px;
     border-radius: 16px;
   }
 

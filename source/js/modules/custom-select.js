@@ -1,5 +1,4 @@
-import SlimSelect from '../vendor/slimselect-export.js';
-
+import SlimSelect from '../vendor/slimselect.js';
 
 const initCustomSelect = (selector) => {
   new SlimSelect({
@@ -22,4 +21,3 @@ const initCustomSelect = (selector) => {
 };
 
 export {initCustomSelect};
-

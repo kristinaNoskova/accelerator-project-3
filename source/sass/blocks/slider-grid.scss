@@ -1,20 +1,20 @@
 .slider-grid {
   overflow: hidden;
 
-  @media(min-width: $vp-tablet) {
+  @media (min-width: $vp-tablet) {
     overflow: visible;
   }
 
   .slider-grid__swiper.swiper {
     overflow: visible;
 
-    @media(min-width: $vp-desktop) {
+    @media (min-width: $vp-desktop) {
       overflow: hidden;
     }
   }
 
   .slider-grid__wrapper {
-    @media(min-width: $vp-tablet) {
+    @media (min-width: $vp-tablet) {
       margin-bottom: 40px;
     }
   }
@@ -23,21 +23,20 @@
     position: static;
     display: none;
 
-    @media(min-width: $vp-tablet) {
+    @media (min-width: $vp-tablet) {
       display: block;
       width: 83%;
       height: 2px;
       background-color: rgba(49, 109, 194, 0.2);
     }
 
-    @media(min-width: $vp-desktop) {
+    @media (min-width: $vp-desktop) {
       width: 91.6%;
     }
   }
 }
 
 .slider-grid__swiper.swiper {
-
   .slider-grid__button {
     position: static;
   }

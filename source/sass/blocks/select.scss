@@ -18,6 +18,7 @@
 
   .select__input::before {
     @include icons-mask($color-white, url("/__spritemap#sprite-arrow-down-view"));
+
     content: "";
     position: absolute;
     right: 20px;
@@ -71,6 +72,11 @@
       color: $color-white;
       background-color: $color-base-secondary;
     }
+  }
+
+  .select__input-option.ss-highlighted {
+    color: $color-base-secondary;
+    background-color: $color-white;
   }
 
   .select__input-option.ss-selected:not(.ss-disabled) {
